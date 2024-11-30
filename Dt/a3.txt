@@ -1,0 +1,370 @@
+
+//Q1
+
+db.Employee.find({ $or :[{"Designation":"Manager"} , {"Desination":"Supervisor"}]}).pretty()
+{
+	"_id" : ObjectId("66cec5cdce94c50b0bae21cf"),
+	"EmployeeId" : 1,
+	"FirstName" : "Rakesh",
+	"LastName" : "Sonwane",
+	"Email" : "rakeshs@gmail.com",
+	"Phoneno" : 1234567890,
+	"Address" : {
+		"HouseNo" : 123,
+		"Street" : "Vakad",
+		"City" : "Pune",
+		"State" : "Maharashtra",
+		"Country" : "India",
+		"Pincode" : 11111
+	},
+	"Salary" : 58000,
+	"Designation" : "Manager",
+	"Experience" : 4,
+	"DateofJoining" : "6/6/2021",
+	"Birthdate" : "29/9/2002"
+}
+{
+	"_id" : ObjectId("66cec5dcce94c50b0bae21d0"),
+	"EmployeeId" : 2,
+	"FirstName" : "Nilesh",
+	"LastName" : "Sonwane",
+	"Email" : "nileshs@gmail.com",
+	"Phoneno" : 1234567812,
+	"Address" : {
+		"HouseNo" : 124,
+		"Street" : "Ap road",
+		"City" : "Mambai",
+		"State" : "Maharashtra",
+		"Country" : "India",
+		"Pincode" : 222222
+	},
+	"Salary" : 68000,
+	"Designation" : "Manager",
+	"Experience" : 3,
+	"DateofJoining" : "4/6/2020",
+	"Birthdate" : "19/9/2000"
+}
+{
+	"_id" : ObjectId("66cecab5aeaf8f737d8e8bb8"),
+	"EmployeeId" : 1,
+	"FirstName" : "Mangesh",
+	"LastName" : "Pawar",
+	"Email" : "mangesh123@gmail.com",
+	"PhoneNo" : "1231231234",
+	"Address" : {
+		"HouseNo" : 12,
+		"Street" : "Ramwadi",
+		"City" : "Pune",
+		"Country" : "India",
+		"PinCode" : 411014
+	},
+	"Salary" : 24000,
+	"Designation" : "Manager",
+	"Experience" : "2 years",
+	"DateOfJoining" : "2nd March 2022",
+	"BirthDate" : "2nd July 1998"
+}
+{
+	"_id" : ObjectId("66dfb91a963b26674699487e"),
+	"EmployeeId" : 1,
+	"FirstName" : "Mangesh",
+	"LastName" : "Pawar",
+	"Email" : "mangesh123@gmail.com",
+	"PhoneNo" : "1231231234",
+	"Address" : {
+		"HouseNo" : 12,
+		"Street" : "Ramwadi",
+		"City" : "Pune",
+		"Country" : "India",
+		"PinCode" : 411014
+	},
+	"Salary" : 20000,
+	"Designation" : "Manager",
+	"Experience" : "2 years",
+	"DateOfJoining" : "2nd March 2022",
+	"BirthDate" : "2nd July 1998"
+}
+> 
+
+=====================================================================================
+
+//Q2
+
+db.Employee.find({"LastName" : "Sonwane"}).forEach(doc => print(JSON.stringify(doc,null , 4 )))
+{
+    "_id": {
+        "$oid": "66cec5cdce94c50b0bae21cf"
+    },
+    "EmployeeId": 1,
+    "FirstName": "Rakesh",
+    "LastName": "Sonwane",
+    "Email": "rakeshs@gmail.com",
+    "Phoneno": 1234567890,
+    "Address": {
+        "HouseNo": 123,
+        "Street": "Vakad",
+        "City": "Pune",
+        "State": "Maharashtra",
+        "Country": "India",
+        "Pincode": 11111
+    },
+    "Salary": 58000,
+    "Designation": "Manager",
+    "Experience": 4,
+    "DateofJoining": "6/6/2021",
+    "Birthdate": "29/9/2002"
+}
+{
+    "_id": {
+        "$oid": "66cec5dcce94c50b0bae21d0"
+    },
+    "EmployeeId": 2,
+    "FirstName": "Nilesh",
+    "LastName": "Sonwane",
+    "Email": "nileshs@gmail.com",
+    "Phoneno": 1234567812,
+    "Address": {
+        "HouseNo": 124,
+        "Street": "Ap road",
+        "City": "Mambai",
+        "State": "Maharashtra",
+        "Country": "India",
+        "Pincode": 222222
+    },
+    "Salary": 68000,
+    "Designation": "Manager",
+    "Experience": 3,
+    "DateofJoining": "4/6/2020",
+    "Birthdate": "19/9/2000"
+}
+> 
+
+==============================================================================================
+
+//Q3
+
+ var mycur=db.Employee.find({"Salary":{$gt:10000}})
+> while(mycur.hasNext()){print(tojson(mycur.next()));}
+{
+	"_id" : ObjectId("66cec5cdce94c50b0bae21cf"),
+	"EmployeeId" : 1,
+	"FirstName" : "Rakesh",
+	"LastName" : "Sonwane",
+	"Email" : "rakeshs@gmail.com",
+	"Phoneno" : 1234567890,
+	"Address" : {
+		"HouseNo" : 123,
+		"Street" : "Vakad",
+		"City" : "Pune",
+		"State" : "Maharashtra",
+		"Country" : "India",
+		"Pincode" : 11111
+	},
+	"Salary" : 58000,
+	"Designation" : "Manager",
+	"Experience" : 4,
+	"DateofJoining" : "6/6/2021",
+	"Birthdate" : "29/9/2002"
+}
+{
+	"_id" : ObjectId("66cec5dcce94c50b0bae21d0"),
+	"EmployeeId" : 2,
+	"FirstName" : "Nilesh",
+	"LastName" : "Sonwane",
+	"Email" : "nileshs@gmail.com",
+	"Phoneno" : 1234567812,
+	"Address" : {
+		"HouseNo" : 124,
+		"Street" : "Ap road",
+		"City" : "Mambai",
+		"State" : "Maharashtra",
+		"Country" : "India",
+		"Pincode" : 222222
+	},
+	"Salary" : 68000,
+	"Designation" : "Manager",
+	"Experience" : 3,
+	"DateofJoining" : "4/6/2020",
+	"Birthdate" : "19/9/2000"
+}
+{
+	"_id" : ObjectId("66cec5f2ce94c50b0bae21d1"),
+	"EmployeeId" : 3,
+	"FirstName" : "Vijay",
+	"LastName" : "Savkar",
+	"Email" : "vijus@gmail.com",
+	"Phoneno" : 1234567813,
+	"Address" : {
+		"HouseNo" : 125,
+		"Street" : "CBS",
+		"City" : "Nashik",
+		"State" : "Maharashtra",
+		"Country" : "India",
+		"Pincode" : 33333
+	},
+	"Salary" : 48000,
+	"Designation" : "Supervisor",
+	"Experience" : 3,
+	"DateofJoining" : "4/6/2021",
+	"Birthdate" : "19/8/2003"
+}
+{
+	"_id" : ObjectId("66cec603ce94c50b0bae21d2"),
+	"EmployeeId" : 4,
+	"FirstName" : "Rushikesh",
+	"LastName" : "Savkar",
+	"Email" : "rushis@gmail.com",
+	"Phoneno" : 1234567878,
+	"Address" : {
+		"HouseNo" : 126,
+		"Street" : "Aghar Road",
+		"City" : "Maleagaon",
+		"State" : "Maharashtra",
+		"Country" : "India",
+		"Pincode" : 33333
+	},
+	"Salary" : 38000,
+	"Designation" : "Business",
+	"Experience" : 2,
+	"DateofJoining" : "4/6/2022",
+	"Birthdate" : "19/8/2000"
+}
+{
+	"_id" : ObjectId("66cec60dce94c50b0bae21d3"),
+	"EmployeeId" : 5,
+	"FirstName" : "Tushar",
+	"LastName" : "Bhamare",
+	"Email" : "tushbhamre@gmail.com",
+	"Phoneno" : 1234567457,
+	"Address" : {
+		"HouseNo" : 127,
+		"Street" : "Malegaon Road",
+		"City" : "Nashik",
+		"State" : "Maharashtra",
+		"Country" : "India",
+		"Pincode" : 444444
+	},
+	"Salary" : 48000,
+	"Designation" : "Teacher",
+	"Experience" : 2,
+	"DateofJoining" : "4/6/2022",
+	"Birthdate" : "19/8/2003"
+}
+
+
+
+============================================================================================================
+
+//Q4
+
+db.Employee.find({} ,{"Designation" : 1 }).pretty().sort({Designation:-1} )
+{ "_id" : ObjectId("66cec5cdce94c50b0bae21cf"), "Designation" : "Manager" }
+{ "_id" : ObjectId("66cec5dcce94c50b0bae21d0"), "Designation" : "Manager" }
+{ "_id" : ObjectId("66cecab5aeaf8f737d8e8bb8"), "Designation" : "Manager" }
+{ "_id" : ObjectId("66dfb91a963b26674699487e"), "Designation" : "Manager" }
+{ "_id" : ObjectId("66cec6d50458c0e54a6fab83"), "Designation" : "Developer" }
+{ "_id" : ObjectId("66cec6d50458c0e54a6fab84"), "Designation" : "Counciler" }
+{ "_id" : ObjectId("66cec603ce94c50b0bae21d2"), "Designation" : "Business" }
+{
+	"_id" : ObjectId("66cec68e0458c0e54a6fab80"),
+	"Designation" : "Assistant Manager"
+}
+
+=============================================================================================================
+
+//Q5
+
+db.Employee.count()
+24
+
+=============================================================================================================
+
+//Q6
+
+ db.Transaction.aggregate([{$group:{_id:"$Payment",Total:{$sum:"$Payment.Total_Amount"}}}])
+{ "_id" : { "Payment_type" : "Debit Card", "Total_Amount" : 20000, "Payment_status" : "Unsuccessful" }, "Total" : 20000 }
+{ "_id" : { "Payment_type" : "Debit Card", "Total_Amount" : 20000, "Payment_status" : "Successful" }, "Total" : 80000 }
+{ "_id" : { "Pay_type" : "Cash", "Total_amount" : 100, "Payment" : "Successful", "Total_Amount" : 20000 }, "Total" : 80000 }
+{ "_id" : { "Total_Amount" : 20000 }, "Total" : 200000 }
+{ "_id" : { "Pay_type" : "Cash", "Total_amount" : 500, "Payment" : "Successful", "Total_Amount" : 20000 }, "Total" : 20000 }
+{ "_id" : { "Pay_type" : "Debit", "Total_amount" : 1500, "Payment" : "Successful", "Total_Amount" : 20000 }, "Total" : 20000 }
+{ "_id" : { "Pay_type" : "Cash", "Total_amount" : 700, "Payment" : "Successful", "Total_Amount" : 20000 }, "Total" : 20000 }
+{ "_id" : { "Pay_type" : "Cash", "Total_amount" : 50, "Payment" : "Successful", "Total_Amount" : 20000 }, "Total" : 20000 }
+{ "_id" : { "Pay_type" : "Cash", "Total_amount" : 300, "Payment" : "Successful", "Total_Amount" : 20000 }, "Total" : 20000 }
+{ "_id" : { "Pay_type" : "Cash", "Total_amount" : 400, "Payment" : "Successful", "Total_Amount" : 20000 }, "Total" : 20000 }
+{ "_id" : { "Payment_type" : "Credit Card", "Total_Amount" : 20000, "Payment_status" : "Successful" }, "Total" : 40000 }
+{ "_id" : { "Payment_type" : "Cash", "Total_Amount" : 20000, "Payment_status" : "Successful" }, "Total" : 60000 }
+{ "_id" : { "Pay_type" : "Cash", "Total_amount" : 500, "Payment" : "Failed", "Total_Amount" : 20000 }, "Total" : 20000 }
+
+================================================================================================================
+
+//Q7
+
+db.Transaction.aggregate([{$group:{_id:"$Payment.Payment_type",Total:{$sum:"$Payment.Total_Amount"}}}])
+{ "_id" : "Cash", "Total" : 60000 }
+{ "_id" : "Debit Card", "Total" : 100000 }
+{ "_id" : "Credit Card", "Total" : 40000 }
+{ "_id" : null, "Total" : 420000 }
+
+==================================================================================================================
+
+//Q8
+
+db.Transaction.find({}, { "Transaction_id": 1, "Transaction_Date": 1 }).sort({"Transaction_Date": -1 }).limit(1).pretty()
+{
+	"_id" : ObjectId("66cec7240458c0e54a6fab8d"),
+	"Transaction_id" : "9045gfde",
+	"Transaction_Date" : "26-11-2008"
+}
+
+====================================================================================================================
+
+//Q9
+
+db.Transaction.aggregate([ { $match:{"Payment.Total_Amount":{$gt:500}} }, { $lookup:{ from:"Employee", localField:"First_Name", foreignField:"FirstName", as:"employee_info" } }, { $unwind:"$employee_info" }, { $group:{ _id:"$employee_info.Designation" } } ]);
+{ "_id" : " Manager" }
+{ "_id" : "Developer" }
+{ "_id" : "Assistant Manager" }
+{ "_id" : null }
+{ "_id" : "Counciler" }
+{ "_id" : "Quality Analyst" }
+
+
+
+=================================================================================================================
+
+//Q10
+
+db.Transaction.mapReduce(
+...  
+...   function() {
+...     var itemId = this["Transaction_details"]["Item_id"];
+...     var quantity = this["Transaction_details"]["Quantity"];
+...     if (itemId === 67890) {
+...       emit(itemId, quantity);
+...     }
+...   },
+...  
+...   function(key, values) {
+...     return Array.sum(values);
+...   },
+...   {
+...     out: "item_totals",  
+...     query: { "Transaction_details.Item_id": 67890 }  
+...   }
+... );
+{
+	"result" : "item_totals",
+	"timeMillis" : 27,
+	"counts" : {
+		"input" : 1,
+		"emit" : 1,
+		"reduce" : 0,
+		"output" : 1
+	},
+	"ok" : 1
+}
+> db.item_totals.find();
+{ "_id" : 67890, "value" : 300 }
+
+

@@ -1,0 +1,10 @@
+create (actor:Actor {name: 'Teja Sajja'}),
+       (movie:Movie {title: 'Hanuman', release_year: 2024}),
+       (director:Person {name: 'prashanth varma', role: 'Director'}),
+       (producer:Person {name: 'tasrathi sivendra', role: 'Producer'})
+
+create (actor)-[:ACTED_IN {role: 'Teja Sajja'}]->(movie),
+       (director)-[:DIRECTED]->(movie),
+       (producer)-[:PRODUCED]->(movie)
+
+match(n) return n

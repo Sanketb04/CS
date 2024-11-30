@@ -1,0 +1,16 @@
+create (p1:Person {name: 'Satish'}),
+       (p2:Person {name: 'Shubham'}),
+       (group:Group {name: 'bounty hunters'}),
+       (story:Story {title: 'holiday'}),
+       (timeline:Timeline {date: '2022-04-12'}),
+       (affiliation:Affiliation {name: ' T series Organization'})
+
+create (p1)-[:FRIEND_OF]->(p2),
+       (p1)-[:BELONGS_TO]->(group),
+       (p1)-[:CREATES]->(story),
+       (story)-[:REFERS_TO]->(p2),
+       (p1)-[:CREATES]->(timeline),
+       (timeline)-[:REFERENCE_FOR]->(story),
+       (person1)-[:AFFILIATED_TO]->(affiliation)
+
+match(n) return n;

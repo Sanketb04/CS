@@ -1,0 +1,22 @@
+create (book1:Book {title: 'Tinker, Tailor, Soldier, Spy', status: 'In Library', condition: 'Old', cost: 500,
+	type: 'Novel',
+ 	tags: ['spy', 'thriller', 'suspense']}),
+       (book2:Book {title: 'Our Man in Havana', status: 'Issued', condition: 'New', cost: 300, type: 'Novel',
+	tags: ['comedy', 'espionage']}),
+       (author1:Person {name: 'John Le Carre', role: 'Author', born: '1932-10-19'}),
+       (author2:Person {name: 'Graham Greene', role: 'Author', born: '1904-10-02', died: '1991-04-02'}),
+       (reader1:Person {name: 'Alan', role: 'Reader'}),
+       (reader2:Person {name: 'Ian', role: 'Reader'}),
+       (publisher:Publisher {name: 'Penguin Books'})
+
+
+
+create (author1)-[:WROTE]->(book1),
+       (author2)-[:WROTE]->(book2),
+       (reader1)-[:RECOMMENDED {date: '2011-07-05'}]->(book1),
+       (reader2)-[:RECOMMENDED {date: '2011-02-03'}]->(book2),
+       (reader2)-[:RECOMMENDED {date: '2011-09-09'}]->(book1),
+       (book1)-[:PUBLISHED_BY]->(publisher),
+       (book2)-[:PUBLISHED_BY]->(publisher);
+
+match(n) return n;
