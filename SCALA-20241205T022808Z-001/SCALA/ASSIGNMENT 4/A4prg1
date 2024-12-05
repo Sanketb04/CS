@@ -1,0 +1,25 @@
+object A4prg1 {
+  def areRotations(str1: String, str2: String): Boolean = {
+    if (str1.length != str2.length) {
+      false
+    } else {
+      val concatenatedStr = str1 + str1
+      concatenatedStr.contains(str2)
+    }
+  }
+
+  def main(args: Array[String]): Unit = {
+    println("Enter the first string: ")
+    val str1 = StdIn.readLine()
+
+    println("Enter the second string: ")
+    val str2 = StdIn.readLine()
+
+    if (areRotations(str1, str2)) {
+      println(s"$str1 and $str2 are rotations of each other.")
+    } else {
+      println(s"$str1 and $str2 are not rotations of each other.")
+    }
+  }
+}
+
