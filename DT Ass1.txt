@@ -1,0 +1,362 @@
+Create a database with the name ‘Movie’.
+2. A ‘Film’ is a collection of documents with the following fields:
+a. Film Id
+b. Title of the film
+c. Year of release
+d. Genre / Category (like adventure, action, sci-fi, romantic etc.)
+A film can belong to more than one genre.
+e. Actors (First name and Last name)
+A film can have more than one actor.
+f. Director (First name and Last name)
+A film can have more than one director.
+g. Release details (It consists of places of release, dates of release and rating
+of the film.)
+3. An ‘Actor’ is a collection of documents with the following fields:
+a. Actor Id
+b. First name
+c. Last Name
+d. Address (Street, City, State, Country, Pin-code)
+e. Contact Details (Email Id and Phone No)
+f. Age of an actor.
+
+Queries :
+
+1. Database Creation
+
+use Movie
+
+
+2. Film Collection Schema
+
+  db.Film.insertOne({
+  filmId: "F001",
+  title: "Inception",
+  yearOfRelease: 2010,
+  genres: ["Sci-Fi", "Thriller"],
+  actors: [
+    { firstName: "Leonardo", lastName: "DiCaprio" },
+    { firstName: "Joseph", lastName: "Gordon-Levitt" }
+  ],
+  directors: [
+    { firstName: "Christopher", lastName: "Nolan" }
+  ],
+  releaseDetails: [
+    { place: "USA", date: "2010-07-16", rating: 8.8 },
+    { place: "UK", date: "2010-07-22", rating: 8.9 }
+  ]
+})
+
+
+3. Actor Collection Schema
+
+
+ db.Actor.insertOne({
+  actorId: "A001",
+  firstName: "Leonardo",
+  lastName: "DiCaprio",
+  address: {
+    street: "123 Hollywood Blvd",
+    city: "Los Angeles",
+    state: "California",
+    country: "USA",
+    pinCode: "90028"
+  },
+  contactDetails: {
+    email: "leo@example.com",
+    phone: "+1234567890"
+  },
+  age: 49
+});
+
+Queries 
+
+a. Insert a Film Belonging to Two Genres
+
+db.Film.insertOne({
+  filmId: "F003",
+  title: "The Dark Knight",
+  yearOfRelease: 2008,
+  genres: ["Action", "Thriller"],
+  actors: [
+    { firstName: "Christian", lastName: "Bale" },
+    { firstName: "Heath", lastName: "Ledger" }
+  ],
+  directors: [
+    { firstName: "Christopher", lastName: "Nolan" }
+  ],
+  releaseDetails: [
+    { place: "USA", date: "2008-07-18", rating: 9.0 }
+  ]
+});
+
+b. Insert a Film Released in More than One Place and on Two Different Dates
+
+db.Film.insertOne({
+  filmId: "F004",
+  title: "Interstellar",
+  yearOfRelease: 2014,
+  genres: ["Sci-Fi", "Adventure"],
+  actors: [
+    { firstName: "Matthew", lastName: "McConaughey" },
+    { firstName: "Anne", lastName: "Hathaway" }
+  ],
+  directors: [
+    { firstName: "Christopher", lastName: "Nolan" }
+  ],
+  releaseDetails: [
+    { place: "USA", date: "2014-11-07", rating: 8.6 },
+    { place: "UK", date: "2014-11-06", rating: 8.7 }
+  ]
+});
+
+c. Insert at Least Three Documents with Films Released in the Same Year
+
+db.Film.insertMany([
+  {
+    filmId: "F005",
+    title: "Iron Man",
+    yearOfRelease: 2008,
+    genres: ["Action", "Sci-Fi"],
+    actors: [
+      { firstName: "Robert", lastName: "Downey Jr." },
+      { firstName: "Gwyneth", lastName: "Paltrow" }
+    ],
+    directors: [
+      { firstName: "Jon", lastName: "Favreau" }
+    ],
+    releaseDetails: [
+      { place: "USA", date: "2008-05-02", rating: 7.9 }
+    ]
+  },
+  {
+    filmId: "F006",
+    title: "Wall-E",
+    yearOfRelease: 2008,
+    genres: ["Animation", "Adventure"],
+    actors: [],
+    directors: [
+      { firstName: "Andrew", lastName: "Stanton" }
+    ],
+    releaseDetails: [
+      { place: "USA", date: "2008-06-27", rating: 8.4 }
+    ]
+  },
+  {
+    filmId: "F007",
+    title: "Slumdog Millionaire",
+    yearOfRelease: 2008,
+    genres: ["Drama", "Romance"],
+    actors: [
+      { firstName: "Dev", lastName: "Patel" },
+      { firstName: "Freida", lastName: "Pinto" }
+    ],
+    directors: [
+      { firstName: "Danny", lastName: "Boyle" }
+    ],
+    releaseDetails: [
+      { place: "India", date: "2008-11-12", rating: 8.0 }
+    ]
+  }
+]);
+
+
+---
+
+d. Insert at Least Two Documents with Films Directed by One Director
+
+db.Film.insertMany([
+  {
+    filmId: "F008",
+    title: "Dunkirk",
+    yearOfRelease: 2017,
+    genres: ["War", "Drama"],
+    actors: [
+      { firstName: "Fionn", lastName: "Whitehead" },
+      { firstName: "Tom", lastName: "Hardy" }
+    ],
+    directors: [
+      { firstName: "Christopher", lastName: "Nolan" }
+    ],
+    releaseDetails: [
+      { place: "USA", date: "2017-07-21", rating: 7.9 }
+    ]
+  },
+  {
+    filmId: "F009",
+    title: "Tenet",
+    yearOfRelease: 2020,
+    genres: ["Action", "Sci-Fi"],
+    actors: [
+      { firstName: "John", lastName: "David Washington" },
+      { firstName: "Robert", lastName: "Pattinson" }
+    ],
+    directors: [
+      { firstName: "Christopher", lastName: "Nolan" }
+    ],
+    releaseDetails: [
+      { place: "UK", date: "2020-08-26", rating: 7.3 }
+    ]
+  }
+]);
+
+
+---
+
+e. Insert at Least Two Documents with Films Acted by 'Madhuri Dixit' and 'Shahrukh Khan'
+
+db.Film.insertMany([
+  {
+    filmId: "F010",
+    title: "Dil To Pagal Hai",
+    yearOfRelease: 1997,
+    genres: ["Romance", "Musical"],
+    actors: [
+      { firstName: "Madhuri", lastName: "Dixit" },
+      { firstName: "Shahrukh", lastName: "Khan" }
+    ],
+    directors: [
+      { firstName: "Yash", lastName: "Chopra" }
+    ],
+    releaseDetails: [
+      { place: "India", date: "1997-10-30", rating: 7.6 }
+    ]
+  },
+  {
+    filmId: "F011",
+    title: "Devdas",
+    yearOfRelease: 2002,
+    genres: ["Romance", "Drama"],
+    actors: [
+      { firstName: "Madhuri", lastName: "Dixit" },
+      { firstName: "Shahrukh", lastName: "Khan" }
+    ],
+    directors: [
+      { firstName: "Sanjay", lastName: "Leela Bhansali" }
+    ],
+    releaseDetails: [
+      { place: "India", date: "2002-07-12", rating: 7.5 }
+    ]
+  }
+]);
+
+
+Operations on collection 
+
+1. Insert at Least 10 Documents in the Collection Actor
+
+db.Actor.insertMany([
+  { actorId: "A001", firstName: "Leonardo", lastName: "DiCaprio", age: 49, contactDetails: { email: "leo@example.com", phone: "+1234567890" }, address: { street: "Hollywood Blvd", city: "Los Angeles", state: "California", country: "USA", pinCode: "90028" } },
+  { actorId: "A002", firstName: "Joseph", lastName: "Gordon-Levitt", age: 43, contactDetails: { email: "joseph@example.com", phone: "+1234567891" }, address: { street: "Sunset Blvd", city: "Los Angeles", state: "California", country: "USA", pinCode: "90029" } },
+  { actorId: "A003", firstName: "Christian", lastName: "Bale", age: 50, contactDetails: { email: "bale@example.com", phone: "+1234567892" }, address: { street: "Gotham Lane", city: "Los Angeles", state: "California", country: "USA", pinCode: "90030" } },
+  { actorId: "A004", firstName: "Heath", lastName: "Ledger", age: 28, contactDetails: { email: "ledger@example.com", phone: "+1234567893" }, address: { street: "Joker Street", city: "Perth", state: "Western Australia", country: "Australia", pinCode: "6000" } },
+  { actorId: "A005", firstName: "Madhuri", lastName: "Dixit", age: 56, contactDetails: { email: "madhuri@example.com", phone: "+919876543210" }, address: { street: "Bollywood Blvd", city: "Mumbai", state: "Maharashtra", country: "India", pinCode: "400001" } },
+  { actorId: "A006", firstName: "Shahrukh", lastName: "Khan", age: 58, contactDetails: { email: "srk@example.com", phone: "+919876543211" }, address: { street: "King Khan Road", city: "Mumbai", state: "Maharashtra", country: "India", pinCode: "400002" } },
+  { actorId: "A007", firstName: "Robert", lastName: "Downey Jr.", age: 58, contactDetails: { email: "robert@example.com", phone: "+1234567894" }, address: { street: "Iron Avenue", city: "New York", state: "New York", country: "USA", pinCode: "10001" } },
+  { actorId: "A008", firstName: "Freida", lastName: "Pinto", age: 39, contactDetails: { email: "freida@example.com", phone: "+919876543212" }, address: { street: "Slumdog Lane", city: "Mumbai", state: "Maharashtra", country: "India", pinCode: "400003" } },
+  { actorId: "A009", firstName: "Dev", lastName: "Patel", age: 33, contactDetails: { email: "dev@example.com", phone: "+919876543213" }, address: { street: "Millionaire Street", city: "London", state: "England", country: "UK", pinCode: "EC1A" } },
+  { actorId: "A010", firstName: "Anne", lastName: "Hathaway", age: 41, contactDetails: { email: "anne@example.com", phone: "+1234567895" }, address: { street: "Interstellar Blvd", city: "New York", state: "New York", country: "USA", pinCode: "10002" } }
+]);
+
+
+---
+
+2. Display All the Documents in Both Collections
+
+// Display all films
+db.Film.find().pretty();
+
+// Display all actors
+db.Actor.find().pretty();
+
+
+---
+
+3. Add a Value to the Rating of Films Starting with ‘T’
+
+db.Film.updateMany(
+  { title: { $regex: "^T", $options: "i" } },
+  { $inc: { "releaseDetails.$[].rating": 0.5 } }
+);
+
+
+---
+
+4. Add an Actor and Film
+
+// Insert Actor
+db.Actor.insertOne({
+  actorId: "A011",
+  firstName: "Tom",
+  lastName: "Cruise",
+  age: 61,
+  contactDetails: { email: "tom@example.com", phone: "+1234567896" },
+  address: { street: "Mission Blvd", city: "Los Angeles", state: "California", country: "USA", pinCode: "90033" }
+});
+
+// Insert Film
+db.Film.insertOne({
+  filmId: "F012",
+  title: "Top Gun: Maverick",
+  yearOfRelease: 2022,
+  genres: ["Action", "Drama"],
+  actors: [
+    { firstName: "Tom", lastName: "Cruise" }
+  ],
+  directors: [
+    { firstName: "Joseph", lastName: "Kosinski" }
+  ],
+  releaseDetails: [
+    { place: "USA", date: "2022-05-27", rating: 8.3 }
+  ]
+});
+
+
+---
+
+5. Delete a Film
+
+db.Film.deleteOne({ title: "Dil To Pagal Hai" });
+
+
+---
+
+6. Delete an Actor
+
+db.Actor.deleteOne({ firstName: "Madhuri", lastName: "Dixit" });
+
+
+---
+
+7. Delete All Actors Above a Certain Age
+
+db.Actor.deleteMany({ age: { $gt: 50 } });
+
+
+---
+
+8. Update Actor’s Address
+
+db.Actor.updateOne(
+  { actorId: "A003" },
+  {
+    $set: {
+      address: {
+        street: "Updated Street",
+        city: "Updated City",
+        state: "Updated State",
+        country: "Updated Country",
+        pinCode: "000000"
+      }
+    }
+  }
+);
+
+
+---
+
+9. Update the Genre of a Film Directed by a Specific Director
+
+db.Film.updateMany(
+  { "directors.firstName": "Christopher", "directors.lastName": "Nolan" },
+  { $set: { genres: ["Epic", "Drama"] } }
+);
