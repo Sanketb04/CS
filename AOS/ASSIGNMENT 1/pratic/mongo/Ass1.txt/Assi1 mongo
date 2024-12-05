@@ -1,0 +1,1110 @@
+
+> use mscdb43
+switched to db mscdb43
+> db.Film.find().pretty();
+{
+	"_id" : ObjectId("66a9c248a78d65201c42181d"),
+	"Film_id" : "1",
+	"Title_Of_Film" : "Pathaan",
+	"Year_of_release" : "2023",
+	"Genre" : [
+		"Action",
+		"Thriller"
+	],
+	"Actor" : [
+		"Shahrukh Khan",
+		"John Abraham"
+	],
+	"Director" : "Gauri Khan",
+	"Release_details" : [
+		"Mumbai",
+		"2023/2/21"
+	],
+	"Ratings" : "5/5"
+}
+{
+	"_id" : ObjectId("66a9c261a78d65201c42181e"),
+	"Film_id" : "1",
+	"Title_Of_Film" : "Pathaan",
+	"Year_of_release" : "2023",
+	"Genre" : [
+		"Action",
+		"Thriller"
+	],
+	"Actor" : [
+		"Shahrukh Khan",
+		"John Abraham"
+	],
+	"Director" : "Gauri Khan",
+	"Release_details" : [
+		"Mumbai",
+		"2023/2/21"
+	],
+	"Ratings" : "5/5"
+}
+{
+	"_id" : ObjectId("66a9c44fa78d65201c42181f"),
+	"Film_id" : "2",
+	"Title_Of_Film" : "Bahubalil",
+	"Year_of_release" : "2021",
+	"Genre" : [
+		"Action",
+		"Thriller"
+	],
+	"Actor" : [
+		"Tammna  bhatia",
+		"Prabhas"
+	],
+	"Director" : "Raja Mauli",
+	"Release_details" : [
+		"Mumbai",
+		"2022/7/11"
+	],
+	"Ratings" : "4/5"
+}
+{
+	"_id" : ObjectId("66a9c7e6a78d65201c421820"),
+	"Film_id" : "3",
+	"Title_Of_Film" : "Dil to pagal hai",
+	"Year_of_release" : "1997",
+	"Genre" : [
+		"Musical",
+		"Comedy",
+		"Drama"
+	],
+	"Actor" : [
+		"Sharukh Khan",
+		"Madhuri  Dixit"
+	],
+	"Director" : "Yash Chopra",
+	"Release_details" : [
+		"Mumbai",
+		"1997/7/1"
+	],
+	"Ratings" : "7/10"
+}
+{
+	"_id" : ObjectId("66a9c962a78d65201c421821"),
+	"Film_id" : "4",
+	"Title_Of_Film" : "Devdas",
+	"Year_of_release" : "2002",
+	"Genre" : [
+		"Musical",
+		"Drama"
+	],
+	"Actor" : [
+		"Sharukh Khan",
+		"Madhuri Dixit",
+		"Aishwarya Rai Bachchan",
+		"Jackie Shroff",
+		"Kirron Kher",
+		"Jaya Bhattacharya"
+	],
+	"Director" : "Sanjay Lila Bhansali",
+	"Release_details" : [
+		"Mumbai",
+		"2002/5/9"
+	],
+	"Ratings" : "4/10"
+}
+{
+	"_id" : ObjectId("66a9cae0a78d65201c421822"),
+	"Film_id" : "5",
+	"Title_Of_Film" : "Koyal",
+	"Year_of_release" : "1997",
+	"Genre" : [
+		"Musical",
+		"Action",
+		"Drama"
+	],
+	"Actor" : [
+		"Sharukh Khan",
+		"Amrish Puri",
+		"Madhuri Dixit"
+	],
+	"Director" : "Rakesh Roshan",
+	"Release_details" : [
+		"Mumbai",
+		"1997/5/24"
+	],
+	"Ratings" : "7/10"
+}
+{
+	"_id" : ObjectId("66a9d4c2a78d65201c421823"),
+	"Film_id" : "6",
+	"Title_Of_Film" : "Jurassic World:Fallen kingdom",
+	"Year_of_release" : "2018",
+	"Genre" : [
+		"Musical",
+		"Action",
+		"Sci-Fi"
+	],
+	"Actor" : [
+		"chris pratt",
+		"Rafa Spall"
+	],
+	"Director" : "J.A. Bayon",
+	"Release_details" : [
+		"uk",
+		"2018/5/24"
+	],
+	"Ratings" : "7/10"
+}
+{
+	"_id" : ObjectId("66a9d4c2a78d65201c421824"),
+	"Film_id" : "7",
+	"Title_Of_Film" : "Yevadu",
+	"Year_of_release" : "2014",
+	"Genre" : [
+		"Action",
+		"Thriller"
+	],
+	"Actor" : [
+		"Allu Arjun",
+		"Ram charan",
+		"Shruti Hassan"
+	],
+	"Director" : "Vamish padipaly",
+	"Release_details" : [
+		"Mumbai",
+		"2014/5/9"
+	],
+	"Ratings" : "6/10"
+}
+{
+	"_id" : ObjectId("66a9d4c2a78d65201c421825"),
+	"Film_id" : "8",
+	"Title_Of_Film" : "Tag",
+	"Year_of_release" : "2018",
+	"Genre" : [
+		"Musical",
+		"Action",
+		"Drama"
+	],
+	"Actor" : [
+		"chris Wallis",
+		"Jermy Spall"
+	],
+	"Director" : "Jeff Tomis",
+	"Release_details" : [
+		"uk",
+		"2018/5/14"
+	],
+	"Ratings" : "6.5/10"
+}
+{
+	"_id" : ObjectId("66a9d4c2a78d65201c421826"),
+	"Film_id" : "9",
+	"Title_Of_Film" : "Pushpa-The Rise",
+	"Year_of_release" : "2021",
+	"Genre" : [
+		"Action",
+		"Thriller"
+	],
+	"Actor" : [
+		"Allu Arjun",
+		"Rashmika mandanna"
+	],
+	"Director" : "Sukumar",
+	"Release_details" : [
+		"Mumbai",
+		"2021/5/9"
+	],
+	"Ratings" : "7.6/10"
+}
+{
+	"_id" : ObjectId("66a9d4c2a78d65201c421827"),
+	"Film_id" : "7",
+	"Title_Of_Film" : "Sairin",
+	"Year_of_release" : "2016",
+	"Genre" : [
+		"Action",
+		"Thriller"
+	],
+	"Actor" : [
+		"Allu Arjun",
+		"Rakul preet Singh"
+	],
+	"Director" : "Boyapati Srinu",
+	"Release_details" : [
+		"Mumbai",
+		"2016/12/9"
+	],
+	"Ratings" : "7/10"
+}
+> { title: /^T/ },
+...  { $inc: { rating: 1 } }
+2024-08-07T11:42:10.972+0530 E  QUERY    [js] uncaught exception: SyntaxError: expected expression, got ',' :
+@(shell):1:15
+> db.movies.updateMany(
+...     { title: /^T/ },
+...     { $inc: { rating: 1 } }
+... )
+{ "acknowledged" : true, "matchedCount" : 0, "modifiedCount" : 0 }
+> db.Film.updateMany(     { title: /^T/ },     { $inc: { rating: 1 } } )
+{ "acknowledged" : true, "matchedCount" : 0, "modifiedCount" : 0 }
+> db.Film.updateMany(     { title:^T },     { $inc: { rating: 1 } } )
+2024-08-07T11:44:21.314+0530 E  QUERY    [js] uncaught exception: SyntaxError: expected expression, got '^' :
+@(shell):1:32
+> db.Film.updateMany(     { title:^"T" },     { $inc: { rating: 1 } } )
+2024-08-07T11:44:31.930+0530 E  QUERY    [js] uncaught exception: SyntaxError: expected expression, got '^' :
+@(shell):1:32
+> db.Film.updateMany(     { title:{$first:"T"} },     { $inc: { rating: 1 } } )
+2024-08-07T11:45:38.765+0530 E  QUERY    [js] WriteError({
+	"index" : 0,
+	"code" : 2,
+	"errmsg" : "unknown operator: $first",
+	"op" : {
+		"q" : {
+			"title" : {
+				"$first" : "T"
+			}
+		},
+		"u" : {
+			"$inc" : {
+				"rating" : 1
+			}
+		},
+		"multi" : true,
+		"upsert" : false
+	}
+}) :
+WriteError({
+	"index" : 0,
+	"code" : 2,
+	"errmsg" : "unknown operator: $first",
+	"op" : {
+		"q" : {
+			"title" : {
+				"$first" : "T"
+			}
+		},
+		"u" : {
+			"$inc" : {
+				"rating" : 1
+			}
+		},
+		"multi" : true,
+		"upsert" : false
+	}
+})
+WriteError@src/mongo/shell/bulk_api.js:458:48
+mergeBatchResults@src/mongo/shell/bulk_api.js:855:49
+executeBatch@src/mongo/shell/bulk_api.js:919:13
+Bulk/this.execute@src/mongo/shell/bulk_api.js:1163:21
+DBCollection.prototype.updateMany@src/mongo/shell/crud_api.js:690:17
+@(shell):1:1
+> db.Film.updateMany(     { title:{$regex:^T} },     { $inc: { rating: 1 } } )
+2024-08-07T11:47:22.063+0530 E  QUERY    [js] uncaught exception: SyntaxError: expected expression, got '^' :
+@(shell):1:40
+> db.Film.updateMany(     { title:{$regex:/^T/} },     { $inc: { rating: 1 } } )
+
+{ "acknowledged" : true, "matchedCount" : 0, "modifiedCount" : 0 }
+> db.Film.find().pretty();
+{
+	"_id" : ObjectId("66a9c248a78d65201c42181d"),
+	"Film_id" : "1",
+	"Title_Of_Film" : "Pathaan",
+	"Year_of_release" : "2023",
+	"Genre" : [
+		"Action",
+		"Thriller"
+	],
+	"Actor" : [
+		"Shahrukh Khan",
+		"John Abraham"
+	],
+	"Director" : "Gauri Khan",
+	"Release_details" : [
+		"Mumbai",
+		"2023/2/21"
+	],
+	"Ratings" : "5/5"
+}
+{
+	"_id" : ObjectId("66a9c261a78d65201c42181e"),
+	"Film_id" : "1",
+	"Title_Of_Film" : "Pathaan",
+	"Year_of_release" : "2023",
+	"Genre" : [
+		"Action",
+		"Thriller"
+	],
+	"Actor" : [
+		"Shahrukh Khan",
+		"John Abraham"
+	],
+	"Director" : "Gauri Khan",
+	"Release_details" : [
+		"Mumbai",
+		"2023/2/21"
+	],
+	"Ratings" : "5/5"
+}
+{
+	"_id" : ObjectId("66a9c44fa78d65201c42181f"),
+	"Film_id" : "2",
+	"Title_Of_Film" : "Bahubalil",
+	"Year_of_release" : "2021",
+	"Genre" : [
+		"Action",
+		"Thriller"
+	],
+	"Actor" : [
+		"Tammna  bhatia",
+		"Prabhas"
+	],
+	"Director" : "Raja Mauli",
+	"Release_details" : [
+		"Mumbai",
+		"2022/7/11"
+	],
+	"Ratings" : "4/5"
+}
+{
+	"_id" : ObjectId("66a9c7e6a78d65201c421820"),
+	"Film_id" : "3",
+	"Title_Of_Film" : "Dil to pagal hai",
+	"Year_of_release" : "1997",
+	"Genre" : [
+		"Musical",
+		"Comedy",
+		"Drama"
+	],
+	"Actor" : [
+		"Sharukh Khan",
+		"Madhuri  Dixit"
+	],
+	"Director" : "Yash Chopra",
+	"Release_details" : [
+		"Mumbai",
+		"1997/7/1"
+	],
+	"Ratings" : "7/10"
+}
+{
+	"_id" : ObjectId("66a9c962a78d65201c421821"),
+	"Film_id" : "4",
+	"Title_Of_Film" : "Devdas",
+	"Year_of_release" : "2002",
+	"Genre" : [
+		"Musical",
+		"Drama"
+	],
+	"Actor" : [
+		"Sharukh Khan",
+		"Madhuri Dixit",
+		"Aishwarya Rai Bachchan",
+		"Jackie Shroff",
+		"Kirron Kher",
+		"Jaya Bhattacharya"
+	],
+	"Director" : "Sanjay Lila Bhansali",
+	"Release_details" : [
+		"Mumbai",
+		"2002/5/9"
+	],
+	"Ratings" : "4/10"
+}
+{
+	"_id" : ObjectId("66a9cae0a78d65201c421822"),
+	"Film_id" : "5",
+	"Title_Of_Film" : "Koyal",
+	"Year_of_release" : "1997",
+	"Genre" : [
+		"Musical",
+		"Action",
+		"Drama"
+	],
+	"Actor" : [
+		"Sharukh Khan",
+		"Amrish Puri",
+		"Madhuri Dixit"
+	],
+	"Director" : "Rakesh Roshan",
+	"Release_details" : [
+		"Mumbai",
+		"1997/5/24"
+	],
+	"Ratings" : "7/10"
+}
+{
+	"_id" : ObjectId("66a9d4c2a78d65201c421823"),
+	"Film_id" : "6",
+	"Title_Of_Film" : "Jurassic World:Fallen kingdom",
+	"Year_of_release" : "2018",
+	"Genre" : [
+		"Musical",
+		"Action",
+		"Sci-Fi"
+	],
+	"Actor" : [
+		"chris pratt",
+		"Rafa Spall"
+	],
+	"Director" : "J.A. Bayon",
+	"Release_details" : [
+		"uk",
+		"2018/5/24"
+	],
+	"Ratings" : "7/10"
+}
+{
+	"_id" : ObjectId("66a9d4c2a78d65201c421824"),
+	"Film_id" : "7",
+	"Title_Of_Film" : "Yevadu",
+	"Year_of_release" : "2014",
+	"Genre" : [
+		"Action",
+		"Thriller"
+	],
+	"Actor" : [
+		"Allu Arjun",
+		"Ram charan",
+		"Shruti Hassan"
+	],
+	"Director" : "Vamish padipaly",
+	"Release_details" : [
+		"Mumbai",
+		"2014/5/9"
+	],
+	"Ratings" : "6/10"
+}
+{
+	"_id" : ObjectId("66a9d4c2a78d65201c421825"),
+	"Film_id" : "8",
+	"Title_Of_Film" : "Tag",
+	"Year_of_release" : "2018",
+	"Genre" : [
+		"Musical",
+		"Action",
+		"Drama"
+	],
+	"Actor" : [
+		"chris Wallis",
+		"Jermy Spall"
+	],
+	"Director" : "Jeff Tomis",
+	"Release_details" : [
+		"uk",
+		"2018/5/14"
+	],
+	"Ratings" : "6.5/10"
+}
+{
+	"_id" : ObjectId("66a9d4c2a78d65201c421826"),
+	"Film_id" : "9",
+	"Title_Of_Film" : "Pushpa-The Rise",
+	"Year_of_release" : "2021",
+	"Genre" : [
+		"Action",
+		"Thriller"
+	],
+	"Actor" : [
+		"Allu Arjun",
+		"Rashmika mandanna"
+	],
+	"Director" : "Sukumar",
+	"Release_details" : [
+		"Mumbai",
+		"2021/5/9"
+	],
+	"Ratings" : "7.6/10"
+}
+{
+	"_id" : ObjectId("66a9d4c2a78d65201c421827"),
+	"Film_id" : "7",
+	"Title_Of_Film" : "Sairin",
+	"Year_of_release" : "2016",
+	"Genre" : [
+		"Action",
+		"Thriller"
+	],
+	"Actor" : [
+		"Allu Arjun",
+		"Rakul preet Singh"
+	],
+	"Director" : "Boyapati Srinu",
+	"Release_details" : [
+		"Mumbai",
+		"2016/12/9"
+	],
+	"Ratings" : "7/10"
+}
+> db.Film.find()
+{ "_id" : ObjectId("66a9c248a78d65201c42181d"), "Film_id" : "1", "Title_Of_Film" : "Pathaan", "Year_of_release" : "2023", "Genre" : [ "Action", "Thriller" ], "Actor" : [ "Shahrukh Khan", "John Abraham" ], "Director" : "Gauri Khan", "Release_details" : [ "Mumbai", "2023/2/21" ], "Ratings" : "5/5" }
+{ "_id" : ObjectId("66a9c261a78d65201c42181e"), "Film_id" : "1", "Title_Of_Film" : "Pathaan", "Year_of_release" : "2023", "Genre" : [ "Action", "Thriller" ], "Actor" : [ "Shahrukh Khan", "John Abraham" ], "Director" : "Gauri Khan", "Release_details" : [ "Mumbai", "2023/2/21" ], "Ratings" : "5/5" }
+{ "_id" : ObjectId("66a9c44fa78d65201c42181f"), "Film_id" : "2", "Title_Of_Film" : "Bahubalil", "Year_of_release" : "2021", "Genre" : [ "Action", "Thriller" ], "Actor" : [ "Tammna  bhatia", "Prabhas" ], "Director" : "Raja Mauli", "Release_details" : [ "Mumbai", "2022/7/11" ], "Ratings" : "4/5" }
+{ "_id" : ObjectId("66a9c7e6a78d65201c421820"), "Film_id" : "3", "Title_Of_Film" : "Dil to pagal hai", "Year_of_release" : "1997", "Genre" : [ "Musical", "Comedy", "Drama" ], "Actor" : [ "Sharukh Khan", "Madhuri  Dixit" ], "Director" : "Yash Chopra", "Release_details" : [ "Mumbai", "1997/7/1" ], "Ratings" : "7/10" }
+{ "_id" : ObjectId("66a9c962a78d65201c421821"), "Film_id" : "4", "Title_Of_Film" : "Devdas", "Year_of_release" : "2002", "Genre" : [ "Musical", "Drama" ], "Actor" : [ "Sharukh Khan", "Madhuri Dixit", "Aishwarya Rai Bachchan", "Jackie Shroff", "Kirron Kher", "Jaya Bhattacharya" ], "Director" : "Sanjay Lila Bhansali", "Release_details" : [ "Mumbai", "2002/5/9" ], "Ratings" : "4/10" }
+{ "_id" : ObjectId("66a9cae0a78d65201c421822"), "Film_id" : "5", "Title_Of_Film" : "Koyal", "Year_of_release" : "1997", "Genre" : [ "Musical", "Action", "Drama" ], "Actor" : [ "Sharukh Khan", "Amrish Puri", "Madhuri Dixit" ], "Director" : "Rakesh Roshan", "Release_details" : [ "Mumbai", "1997/5/24" ], "Ratings" : "7/10" }
+{ "_id" : ObjectId("66a9d4c2a78d65201c421823"), "Film_id" : "6", "Title_Of_Film" : "Jurassic World:Fallen kingdom", "Year_of_release" : "2018", "Genre" : [ "Musical", "Action", "Sci-Fi" ], "Actor" : [ "chris pratt", "Rafa Spall" ], "Director" : "J.A. Bayon", "Release_details" : [ "uk", "2018/5/24" ], "Ratings" : "7/10" }
+{ "_id" : ObjectId("66a9d4c2a78d65201c421824"), "Film_id" : "7", "Title_Of_Film" : "Yevadu", "Year_of_release" : "2014", "Genre" : [ "Action", "Thriller" ], "Actor" : [ "Allu Arjun", "Ram charan", "Shruti Hassan" ], "Director" : "Vamish padipaly", "Release_details" : [ "Mumbai", "2014/5/9" ], "Ratings" : "6/10" }
+{ "_id" : ObjectId("66a9d4c2a78d65201c421825"), "Film_id" : "8", "Title_Of_Film" : "Tag", "Year_of_release" : "2018", "Genre" : [ "Musical", "Action", "Drama" ], "Actor" : [ "chris Wallis", "Jermy Spall" ], "Director" : "Jeff Tomis", "Release_details" : [ "uk", "2018/5/14" ], "Ratings" : "6.5/10" }
+{ "_id" : ObjectId("66a9d4c2a78d65201c421826"), "Film_id" : "9", "Title_Of_Film" : "Pushpa-The Rise", "Year_of_release" : "2021", "Genre" : [ "Action", "Thriller" ], "Actor" : [ "Allu Arjun", "Rashmika mandanna" ], "Director" : "Sukumar", "Release_details" : [ "Mumbai", "2021/5/9" ], "Ratings" : "7.6/10" }
+{ "_id" : ObjectId("66a9d4c2a78d65201c421827"), "Film_id" : "7", "Title_Of_Film" : "Sairin", "Year_of_release" : "2016", "Genre" : [ "Action", "Thriller" ], "Actor" : [ "Allu Arjun", "Rakul preet Singh" ], "Director" : "Boyapati Srinu", "Release_details" : [ "Mumbai", "2016/12/9" ], "Ratings" : "7/10" }
+> db.Actor.find()
+{ "_id" : ObjectId("66a9e22b45b12b484431b244") }
+{ "_id" : ObjectId("66a9e2c745b12b484431b245"), "Actor_id" : 1, "First_name" : "Shradha", "Last_name" : "Kapoor", "Address" : { "Street" : "S9", "City" : "Satara", "State" : "Maharashtra", "Country" : "India", "Pin-code" : "MH10" }, "Contact_Details" : { "Email" : "shradhakapoor@gmail.com", "Phone_number" : "70890-64678" }, "Age" : 55 }
+{ "_id" : ObjectId("66a9e2df45b12b484431b246"), "Actor_id" : 1, "First_name" : "Shradha", "Last_name" : "Kapoor", "Address" : { "Street" : "S9", "City" : "Satara", "State" : "Maharashtra", "Country" : "India", "Pin-code" : "MH10" }, "Contact_Details" : { "Email" : "shradhakapoor@gmail.com", "Phone_number" : "70890-64678" }, "Age" : 55 }
+{ "_id" : ObjectId("66b2f932824a77ae70048812"), "Actor_id" : 3, "First_name" : "Anushka", "Last_name" : "Shetty", "Address" : { "Street" : "S9", "City" : "Haidrabad", "State" : "Haidrabad", "Country" : "India", "Pin-code" : "501221" }, "Contact_Details" : { "Email" : "anushetty@gmail.com", "Phone_number" : "90890-64678" }, "Age" : 32 }
+{ "_id" : ObjectId("66b2f932824a77ae70048813"), "Actor_id" : 4, "First_name" : "Allu", "Last_name" : "Arjun", "Address" : { "Street" : "S9", "City" : "Haidrabad", "State" : "Haidrabad", "Country" : "India", "Pin-code" : "501223" }, "Contact_Details" : { "Email" : "Allu@gmail.com", "Phone_number" : "96990-64698" }, "Age" : 43 }
+{ "_id" : ObjectId("66b2f932824a77ae70048814"), "Actor_id" : 5, "First_name" : "vijay", "Last_name" : "Devrakonda", "Address" : { "Street" : "S9", "City" : "Koimbator", "State" : "Telangana", "Country" : "India", "Pin-code" : "601223" }, "Contact_Details" : { "Email" : "vijayd@gmail.com", "Phone_number" : "96990-68698" }, "Age" : 40 }
+{ "_id" : ObjectId("66b2f932824a77ae70048815"), "Actor_id" : 6, "First_name" : "Makrand", "Last_name" : "Anaspure", "Address" : { "Street" : "S9", "City" : "Pune", "State" : "Maharashtra", "Country" : "India", "Pin-code" : "408203" }, "Contact_Details" : { "Email" : "ma@gmail.com", "Phone_number" : "76990-686334" }, "Age" : 45 }
+{ "_id" : ObjectId("66b2f932824a77ae70048816"), "Actor_id" : 7, "First_name" : "Mahesh", "Last_name" : "Kothare", "Address" : { "Street" : "S9", "City" : "mumbai", "State" : "Maharashtra", "Country" : "India", "Pin-code" : "411203" }, "Contact_Details" : { "Email" : "mahesh@gmail.com", "Phone_number" : "78970-686334" }, "Age" : 33 }
+{ "_id" : ObjectId("66b2fb25824a77ae70048817"), "Actor_id" : 8, "First_name" : "Prabhas", "Last_name" : "---", "Address" : { "Street" : "S9", "City" : "Haidrabad", "State" : "Haidrabad", "Country" : "India", "Pin-code" : "501221" }, "Contact_Details" : { "Email" : "prabhas@gmail.com", "Phone_number" : "90890-64678" }, "Age" : 27 }
+{ "_id" : ObjectId("66b2fb25824a77ae70048818"), "Actor_id" : 9, "First_name" : "Rashmika", "Last_name" : "mandana", "Address" : { "Street" : "S9", "City" : "Banglore", "State" : "Karnataka", "Country" : "India", "Pin-code" : "601223" }, "Contact_Details" : { "Email" : "rashmika@gmail.com", "Phone_number" : "86990-74698" }, "Age" : 29 }
+{ "_id" : ObjectId("66b2fb25824a77ae70048819"), "Actor_id" : 10, "First_name" : "Amitab", "Last_name" : "Bacchan", "Address" : { "Street" : "S9", "City" : "Mumbai", "State" : "Maharashtra", "Country" : "India", "Pin-code" : "401221" }, "Contact_Details" : { "Email" : "prabhas@gmail.com", "Phone_number" : "90890-64678" }, "Age" : 37 }
+> db.Actor.insertOne( "Actor_id" : 10, "First_name" : "Amitab", "Last_name" : "Bacchan", "Address" : { "Street" : "S9", "City" : "Mumbai", "State" : "Maharashtra", "Country" : "India", "Pin-code" : "401221" }, "Contact_Details" : { "Email" : "prabhas@gmail.com", "Phone_number" : "90890-64678" }, "Age" : 37 })
+2024-08-07T11:53:43.553+0530 E  QUERY    [js] uncaught exception: SyntaxError: missing ) after argument list :
+@(shell):1:31
+> db.Actor.insertOne( {"Actor_id" : 11, "First_name" : "Amrish", "Last_name" : "Puri", "Address" : { "Street" : "S9", "City" : "Mumbai", "State" : "Maharashtra", "Country" : "India", "Pin-code" : "404221" }, "Contact_Details" : { "Email" : "Amir@gmail.com", "Phone_number" : "91790-64678" }, "Age" : 87 })
+{
+	"acknowledged" : true,
+	"insertedId" : ObjectId("66b3133b2c767fb4731fd0e5")
+}
+> db.Actor.insertOne( {"Actor_id" : 11, "First_name" : "Amrish", "Last_name" : "Puri", "Address" : { "Street" : "S9", "City" : "Mumbai", "State" : "Maharashtra", "Country" : "India", "Pin-code" : "404221" }, "Contact_Details" : { "Email" : "Amir@gmail.com", "Phone_number" : "91790-64678" }, "Age" : 87,Acted_films:"Gadar","Romeo" })
+2024-08-07T11:56:56.839+0530 E  QUERY    [js] uncaught exception: SyntaxError: missing : after property id :
+@(shell):1:329
+> db.Actor.insertOne( {"Actor_id" : 11, "First_name" : "Amrish", "Last_name" : "Puri", "Address" : { "Street" : "S9", "City" : "Mumbai", "State" : "Maharashtra", "Country" : "India", "Pin-code" : "404221" }, "Contact_Details" : { "Email" : "Amir@gmail.com", "Phone_number" : "91790-64678" }, "Age" : 87,"Acted_films":"Gadar","Romeo"})
+2024-08-07T11:57:28.167+0530 E  QUERY    [js] uncaught exception: SyntaxError: missing : after property id :
+@(shell):1:330
+> db.Actor.insertOne( {"Actor_id" : 11, "First_name" : "Amrish", "Last_name" : "Puri", "Address" : { "Street" : "S9", "City" : "Mumbai", "State" : "Maharashtra", "Country" : "India", "Pin-code" : "404221" }, "Contact_Details" : { "Email" : "Amir@gmail.com", "Phone_number" : "91790-64678" }, "Age" : 87,"Acted_films":{"Gadar","Romeo"}})
+2024-08-07T11:57:52.334+0530 E  QUERY    [js] uncaught exception: SyntaxError: missing : after property id :
+@(shell):1:323
+> db.Actor.insertOne( {"Actor_id" : 11, "First_name" : "Amrish", "Last_name" : "Puri", "Address" : { "Street" : "S9", "City" : "Mumbai", "State" : "Maharashtra", "Country" : "India", "Pin-code" : "404221" }, "Contact_Details" : { "Email" : "Amir@gmail.com", "Phone_number" : "91790-64678" }, "Age" : 87,"Acted_films":"Gadar"})
+{
+	"acknowledged" : true,
+	"insertedId" : ObjectId("66b313f82c767fb4731fd0e6")
+}
+> db.Film.deleteOne({ title: "Boypati Srinu" })
+{ "acknowledged" : true, "deletedCount" : 0 }
+> db.Film.find().deleteOne({ title: "Boypati Srinu" })
+2024-08-07T12:01:12.388+0530 E  QUERY    [js] uncaught exception: TypeError: db.Film.find(...).deleteOne is not a function :
+@(shell):1:1
+> db.Film.find().remove({ title: "Boypati Srinu" })
+2024-08-07T12:01:26.499+0530 E  QUERY    [js] uncaught exception: TypeError: db.Film.find(...).remove is not a function :
+@(shell):1:1
+> db.Film.delete({ title: "Boypati Srinu" })
+2024-08-07T12:01:45.323+0530 E  QUERY    [js] uncaught exception: TypeError: db.Film.delete is not a function :
+@(shell):1:1
+> db.Film.deleteOne({ title: "Boypati Srinu" })
+{ "acknowledged" : true, "deletedCount" : 0 }
+> db.Film.find().pretty
+function() {
+    this._prettyShell = true;
+    return this;
+}
+> db.Film.find().pretty()
+{
+	"_id" : ObjectId("66a9c248a78d65201c42181d"),
+	"Film_id" : "1",
+	"Title_Of_Film" : "Pathaan",
+	"Year_of_release" : "2023",
+	"Genre" : [
+		"Action",
+		"Thriller"
+	],
+	"Actor" : [
+		"Shahrukh Khan",
+		"John Abraham"
+	],
+	"Director" : "Gauri Khan",
+	"Release_details" : [
+		"Mumbai",
+		"2023/2/21"
+	],
+	"Ratings" : "5/5"
+}
+{
+	"_id" : ObjectId("66a9c261a78d65201c42181e"),
+	"Film_id" : "1",
+	"Title_Of_Film" : "Pathaan",
+	"Year_of_release" : "2023",
+	"Genre" : [
+		"Action",
+		"Thriller"
+	],
+	"Actor" : [
+		"Shahrukh Khan",
+		"John Abraham"
+	],
+	"Director" : "Gauri Khan",
+	"Release_details" : [
+		"Mumbai",
+		"2023/2/21"
+	],
+	"Ratings" : "5/5"
+}
+{
+	"_id" : ObjectId("66a9c44fa78d65201c42181f"),
+	"Film_id" : "2",
+	"Title_Of_Film" : "Bahubalil",
+	"Year_of_release" : "2021",
+	"Genre" : [
+		"Action",
+		"Thriller"
+	],
+	"Actor" : [
+		"Tammna  bhatia",
+		"Prabhas"
+	],
+	"Director" : "Raja Mauli",
+	"Release_details" : [
+		"Mumbai",
+		"2022/7/11"
+	],
+	"Ratings" : "4/5"
+}
+{
+	"_id" : ObjectId("66a9c7e6a78d65201c421820"),
+	"Film_id" : "3",
+	"Title_Of_Film" : "Dil to pagal hai",
+	"Year_of_release" : "1997",
+	"Genre" : [
+		"Musical",
+		"Comedy",
+		"Drama"
+	],
+	"Actor" : [
+		"Sharukh Khan",
+		"Madhuri  Dixit"
+	],
+	"Director" : "Yash Chopra",
+	"Release_details" : [
+		"Mumbai",
+		"1997/7/1"
+	],
+	"Ratings" : "7/10"
+}
+{
+	"_id" : ObjectId("66a9c962a78d65201c421821"),
+	"Film_id" : "4",
+	"Title_Of_Film" : "Devdas",
+	"Year_of_release" : "2002",
+	"Genre" : [
+		"Musical",
+		"Drama"
+	],
+	"Actor" : [
+		"Sharukh Khan",
+		"Madhuri Dixit",
+		"Aishwarya Rai Bachchan",
+		"Jackie Shroff",
+		"Kirron Kher",
+		"Jaya Bhattacharya"
+	],
+	"Director" : "Sanjay Lila Bhansali",
+	"Release_details" : [
+		"Mumbai",
+		"2002/5/9"
+	],
+	"Ratings" : "4/10"
+}
+{
+	"_id" : ObjectId("66a9cae0a78d65201c421822"),
+	"Film_id" : "5",
+	"Title_Of_Film" : "Koyal",
+	"Year_of_release" : "1997",
+	"Genre" : [
+		"Musical",
+		"Action",
+		"Drama"
+	],
+	"Actor" : [
+		"Sharukh Khan",
+		"Amrish Puri",
+		"Madhuri Dixit"
+	],
+	"Director" : "Rakesh Roshan",
+	"Release_details" : [
+		"Mumbai",
+		"1997/5/24"
+	],
+	"Ratings" : "7/10"
+}
+{
+	"_id" : ObjectId("66a9d4c2a78d65201c421823"),
+	"Film_id" : "6",
+	"Title_Of_Film" : "Jurassic World:Fallen kingdom",
+	"Year_of_release" : "2018",
+	"Genre" : [
+		"Musical",
+		"Action",
+		"Sci-Fi"
+	],
+	"Actor" : [
+		"chris pratt",
+		"Rafa Spall"
+	],
+	"Director" : "J.A. Bayon",
+	"Release_details" : [
+		"uk",
+		"2018/5/24"
+	],
+	"Ratings" : "7/10"
+}
+{
+	"_id" : ObjectId("66a9d4c2a78d65201c421824"),
+	"Film_id" : "7",
+	"Title_Of_Film" : "Yevadu",
+	"Year_of_release" : "2014",
+	"Genre" : [
+		"Action",
+		"Thriller"
+	],
+	"Actor" : [
+		"Allu Arjun",
+		"Ram charan",
+		"Shruti Hassan"
+	],
+	"Director" : "Vamish padipaly",
+	"Release_details" : [
+		"Mumbai",
+		"2014/5/9"
+	],
+	"Ratings" : "6/10"
+}
+{
+	"_id" : ObjectId("66a9d4c2a78d65201c421825"),
+	"Film_id" : "8",
+	"Title_Of_Film" : "Tag",
+	"Year_of_release" : "2018",
+	"Genre" : [
+		"Musical",
+		"Action",
+		"Drama"
+	],
+	"Actor" : [
+		"chris Wallis",
+		"Jermy Spall"
+	],
+	"Director" : "Jeff Tomis",
+	"Release_details" : [
+		"uk",
+		"2018/5/14"
+	],
+	"Ratings" : "6.5/10"
+}
+{
+	"_id" : ObjectId("66a9d4c2a78d65201c421826"),
+	"Film_id" : "9",
+	"Title_Of_Film" : "Pushpa-The Rise",
+	"Year_of_release" : "2021",
+	"Genre" : [
+		"Action",
+		"Thriller"
+	],
+	"Actor" : [
+		"Allu Arjun",
+		"Rashmika mandanna"
+	],
+	"Director" : "Sukumar",
+	"Release_details" : [
+		"Mumbai",
+		"2021/5/9"
+	],
+	"Ratings" : "7.6/10"
+}
+{
+	"_id" : ObjectId("66a9d4c2a78d65201c421827"),
+	"Film_id" : "7",
+	"Title_Of_Film" : "Sairin",
+	"Year_of_release" : "2016",
+	"Genre" : [
+		"Action",
+		"Thriller"
+	],
+	"Actor" : [
+		"Allu Arjun",
+		"Rakul preet Singh"
+	],
+	"Director" : "Boyapati Srinu",
+	"Release_details" : [
+		"Mumbai",
+		"2016/12/9"
+	],
+	"Ratings" : "7/10"
+}
+> db.Film.deleteOne({ title: "Boyapati Srinu" })
+{ "acknowledged" : true, "deletedCount" : 0 }
+> db.Film.deleteOne({ title: "Sairin" })
+{ "acknowledged" : true, "deletedCount" : 0 }
+> db.Film.deleteOne({ title:  "Pushpa-The Rise" })
+{ "acknowledged" : true, "deletedCount" : 0 }
+> db.Film.remove({"Title_Of_Film" : "Pushpa-The Rise" })
+WriteResult({ "nRemoved" : 1 })
+> "db.Actor.remove({  "First_name" : "Mahesh", "Last_name" : "Kothare"})
+2024-08-07T12:11:32.802+0530 E  QUERY    [js] uncaught exception: SyntaxError: unexpected token: identifier :
+@(shell):1:21
+> "db.Actor.remove({  "First_name" : "Mahesh"})
+2024-08-07T12:11:50.801+0530 E  QUERY    [js] uncaught exception: SyntaxError: unexpected token: identifier :
+@(shell):1:21
+> db.Actor.remove({"First_name" : "Mahesh"})
+WriteResult({ "nRemoved" : 1 })
+> db.Actor.remove({ age: { $gt: 40 } })
+WriteResult({ "nRemoved" : 0 })
+> db.Actor.find.pretty()
+2024-08-07T12:15:12.878+0530 E  QUERY    [js] uncaught exception: TypeError: db.Actor.find.pretty is not a function :
+@(shell):1:1
+> db.Actor.find().pretty()
+{ "_id" : ObjectId("66a9e22b45b12b484431b244") }
+{
+	"_id" : ObjectId("66a9e2c745b12b484431b245"),
+	"Actor_id" : 1,
+	"First_name" : "Shradha",
+	"Last_name" : "Kapoor",
+	"Address" : {
+		"Street" : "S9",
+		"City" : "Satara",
+		"State" : "Maharashtra",
+		"Country" : "India",
+		"Pin-code" : "MH10"
+	},
+	"Contact_Details" : {
+		"Email" : "shradhakapoor@gmail.com",
+		"Phone_number" : "70890-64678"
+	},
+	"Age" : 55
+}
+{
+	"_id" : ObjectId("66a9e2df45b12b484431b246"),
+	"Actor_id" : 1,
+	"First_name" : "Shradha",
+	"Last_name" : "Kapoor",
+	"Address" : {
+		"Street" : "S9",
+		"City" : "Satara",
+		"State" : "Maharashtra",
+		"Country" : "India",
+		"Pin-code" : "MH10"
+	},
+	"Contact_Details" : {
+		"Email" : "shradhakapoor@gmail.com",
+		"Phone_number" : "70890-64678"
+	},
+	"Age" : 55
+}
+{
+	"_id" : ObjectId("66b2f932824a77ae70048812"),
+	"Actor_id" : 3,
+	"First_name" : "Anushka",
+	"Last_name" : "Shetty",
+	"Address" : {
+		"Street" : "S9",
+		"City" : "Haidrabad",
+		"State" : "Haidrabad",
+		"Country" : "India",
+		"Pin-code" : "501221"
+	},
+	"Contact_Details" : {
+		"Email" : "anushetty@gmail.com",
+		"Phone_number" : "90890-64678"
+	},
+	"Age" : 32
+}
+{
+	"_id" : ObjectId("66b2f932824a77ae70048813"),
+	"Actor_id" : 4,
+	"First_name" : "Allu",
+	"Last_name" : "Arjun",
+	"Address" : {
+		"Street" : "S9",
+		"City" : "Haidrabad",
+		"State" : "Haidrabad",
+		"Country" : "India",
+		"Pin-code" : "501223"
+	},
+	"Contact_Details" : {
+		"Email" : "Allu@gmail.com",
+		"Phone_number" : "96990-64698"
+	},
+	"Age" : 43
+}
+{
+	"_id" : ObjectId("66b2f932824a77ae70048814"),
+	"Actor_id" : 5,
+	"First_name" : "vijay",
+	"Last_name" : "Devrakonda",
+	"Address" : {
+		"Street" : "S9",
+		"City" : "Koimbator",
+		"State" : "Telangana",
+		"Country" : "India",
+		"Pin-code" : "601223"
+	},
+	"Contact_Details" : {
+		"Email" : "vijayd@gmail.com",
+		"Phone_number" : "96990-68698"
+	},
+	"Age" : 40
+}
+{
+	"_id" : ObjectId("66b2f932824a77ae70048815"),
+	"Actor_id" : 6,
+	"First_name" : "Makrand",
+	"Last_name" : "Anaspure",
+	"Address" : {
+		"Street" : "S9",
+		"City" : "Pune",
+		"State" : "Maharashtra",
+		"Country" : "India",
+		"Pin-code" : "408203"
+	},
+	"Contact_Details" : {
+		"Email" : "ma@gmail.com",
+		"Phone_number" : "76990-686334"
+	},
+	"Age" : 45
+}
+{
+	"_id" : ObjectId("66b2fb25824a77ae70048817"),
+	"Actor_id" : 8,
+	"First_name" : "Prabhas",
+	"Last_name" : "---",
+	"Address" : {
+		"Street" : "S9",
+		"City" : "Haidrabad",
+		"State" : "Haidrabad",
+		"Country" : "India",
+		"Pin-code" : "501221"
+	},
+	"Contact_Details" : {
+		"Email" : "prabhas@gmail.com",
+		"Phone_number" : "90890-64678"
+	},
+	"Age" : 27
+}
+{
+	"_id" : ObjectId("66b2fb25824a77ae70048818"),
+	"Actor_id" : 9,
+	"First_name" : "Rashmika",
+	"Last_name" : "mandana",
+	"Address" : {
+		"Street" : "S9",
+		"City" : "Banglore",
+		"State" : "Karnataka",
+		"Country" : "India",
+		"Pin-code" : "601223"
+	},
+	"Contact_Details" : {
+		"Email" : "rashmika@gmail.com",
+		"Phone_number" : "86990-74698"
+	},
+	"Age" : 29
+}
+{
+	"_id" : ObjectId("66b2fb25824a77ae70048819"),
+	"Actor_id" : 10,
+	"First_name" : "Amitab",
+	"Last_name" : "Bacchan",
+	"Address" : {
+		"Street" : "S9",
+		"City" : "Mumbai",
+		"State" : "Maharashtra",
+		"Country" : "India",
+		"Pin-code" : "401221"
+	},
+	"Contact_Details" : {
+		"Email" : "prabhas@gmail.com",
+		"Phone_number" : "90890-64678"
+	},
+	"Age" : 37
+}
+{
+	"_id" : ObjectId("66b3133b2c767fb4731fd0e5"),
+	"Actor_id" : 11,
+	"First_name" : "Amrish",
+	"Last_name" : "Puri",
+	"Address" : {
+		"Street" : "S9",
+		"City" : "Mumbai",
+		"State" : "Maharashtra",
+		"Country" : "India",
+		"Pin-code" : "404221"
+	},
+	"Contact_Details" : {
+		"Email" : "Amir@gmail.com",
+		"Phone_number" : "91790-64678"
+	},
+	"Age" : 87
+}
+{
+	"_id" : ObjectId("66b313f82c767fb4731fd0e6"),
+	"Actor_id" : 11,
+	"First_name" : "Amrish",
+	"Last_name" : "Puri",
+	"Address" : {
+		"Street" : "S9",
+		"City" : "Mumbai",
+		"State" : "Maharashtra",
+		"Country" : "India",
+		"Pin-code" : "404221"
+	},
+	"Contact_Details" : {
+		"Email" : "Amir@gmail.com",
+		"Phone_number" : "91790-64678"
+	},
+	"Age" : 87,
+	"Acted_films" : "Gadar"
+}
+> db.Actor.remove({ "Age": { $gt: 40 } })
+WriteResult({ "nRemoved" : 6 })
+> db.Actor.updateOne(
+...     { actorId: "yourActorId" },
+...     { $set: { address: "newAddress" } }
+... )
+{ "acknowledged" : true, "matchedCount" : 0, "modifiedCount" : 0 }
+> db.Actor.update(     { actorId: "3" },     { $set: {"Address" : { } } )
+... "Street" : "S9",
+... "City" : "Mumbai",
+... "State" : "Maharashtra",
+... "Country" : "India",
+... "Pin-code" : "404221"
+... }
+2024-08-07T12:18:39.307+0530 E  QUERY    [js] uncaught exception: SyntaxError: missing } after property list :
+@(shell):1:70
+> db.Actor.update(     { actorId: "3" },     { $set: {"Address" : { } } ) "Street" : "S9", "City" : "Mumbai", "State" : "Maharashtra", "Co
+2024-08-07T12:19:27.995+0530 E  QUERY    [js] uncaught exception: SyntaxError: missing } after property list :
+@(shell):1:70
+> db.Actor.updateOne(     { actorId: "yourActorId" },     { $set: { "Address" : { } } )
+... "Street" : "S9",
+... "City" : "Mumbai",
+... "State" : "Maharashtra",
+... "Country" : "India",
+... "Pin-code" : "404221"
+... }
+2024-08-07T12:20:17.042+0530 E  QUERY    [js] uncaught exception: SyntaxError: missing } after property list :
+@(shell):1:84
+> db.Actor.updateOne(     { actorId: "yourActorId" },     { $set: { "Address" : { "Street" : "S9", "City" : "Mumbai", "State" : "Maharashtra", "Country" : "India", "Pin-code" : "404221" }})
+... 
+... 
+> 
+> db.Actor.updateOne(     { actorId: "yourActorId" },     { $set: { "Address" :{ "Street" : "S9", "City" : "Mumbai", "State" : "Maharashtra", "Country" : "India", "Pin-code" : "404221"} }});
+{ "acknowledged" : true, "matchedCount" : 0, "modifiedCount" : 0 }
+> db.Actor.update(     { actorId: "3" },     { $set: { "Address" :{ "Street" : "S9", "City" : "Mumbai", "State" : "Maharashtra", "Country" : "India", "Pin-code" : "404221"} }});
+WriteResult({ "nMatched" : 0, "nUpserted" : 0, "nModified" : 0 })
+> db.Actor.update(     { "Actor_Id": 3 },     { $set: { "Address" :{ "Street" : "S9", "City" : "Mumbai", "State" : "Maharashtra", "Country" : "India", "Pin-code" : "404221"} }});
+WriteResult({ "nMatched" : 0, "nUpserted" : 0, "nModified" : 0 })
+> db.Actor.update({"Actor_id" : 9 },     { $set: { "Address" :{ "Street" : "S9", "City" : "Mumbai", "State" : "Maharashtra", "Country" : "India", "Pin-code" : "404221"} }});
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.Film.update({"Director" : "Boyapati Srinu", },     { $set: }});
+2024-08-07T12:28:28.541+0530 E  QUERY    [js] uncaught exception: SyntaxError: expected expression, got '}' :
+@(shell):1:62
+> db.Film.update({"Director" : "Boyapati Srinu" },     { $set:"Genre" : [ }});
+2024-08-07T12:29:16.893+0530 E  QUERY    [js] uncaught exception: SyntaxError: missing } after property list :
+@(shell):1:68
+> "Musical",
+... "Action",
+... "Drama"
+Drama
+> db.Film.update({"Director" : "Boyapati Srinu" },     { $set:"Genre" : ["Drama","Musical" ]}});
+2024-08-07T12:30:01.980+0530 E  QUERY    [js] uncaught exception: SyntaxError: missing } after property list :
+@(shell):1:68
+> db.Film.update({"Director" : "Boyapati Srinu" },     { $set:"Genre" : ["Drama","Musical"]});
+2024-08-07T12:30:22.554+0530 E  QUERY    [js] uncaught exception: SyntaxError: missing } after property list :
+@(shell):1:68
+> db.Film.update({"Director" : "Boyapati Srinu" },     { $set:{"Genre" : ["Drama","Musical"]}});
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.Film.update({"Director" : "Boyapati Srinu" },     { $set:{"Genre" : ["Drama","Musical"]}});
+
