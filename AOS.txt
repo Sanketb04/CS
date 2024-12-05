@@ -1,5 +1,7 @@
 Ass1
-Q3.
+Q3.Write a program to read the current directory and display the name of the files,
+
+size ofthe file, type of file and no of files in the current directory
 
 #include<stdio.h>
 #include<dirent.h>
@@ -31,7 +33,7 @@ int main()
 }
 ##################################################################################
 
-Q2. 
+Q2. Write a program to open a file and go to sleep for 15 seconds before terminating.
 //open file and sleep for 15sec.
 
 #include<stdio.h>
@@ -53,7 +55,7 @@ int main()
 }
 ########################################################################################
 
-Q1. 
+Q1. Write a program to create a file with a hole in it.
 
 #include <fcntl.h>
 #include <unistd.h>
@@ -88,7 +90,7 @@ int main() {
 **********************************************************************************
 Ass2
 
-Q1
+Q1. banking transaction  EMI , withdrawals, deposit 
 
 #include<stdio.h>
 #include<stdlib.h>
@@ -206,7 +208,7 @@ int main()
 
 ************************************************************************************************
 
-Ass3
+Ass3. Write a program to create 'n' children. When the children will terminate, display total cumulative time children spent in user and kernel mode.
 
 Q1.
 #include <stdio.h>
@@ -267,7 +269,7 @@ int main() {
 
 ##########################################################################################
 
-Q2.
+Q2. Write a program to demonstrate the use of atexit() function
 #include<stdio.h>
 #include<stdlib.h>
 #include<unistd.h>
@@ -289,7 +291,7 @@ int main()
 
 ####################################################################################
 
-Q3
+Q3 Write a program to handle the two-way communication between parent and child using pipe
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -363,7 +365,7 @@ int main() {
 *************************************************************************************
 Ass4
 
-Q1
+Q1 Write a C program that illustrates inter process communication using shared memory.
 
 #include<stdio.h>
 #include<string.h>
@@ -439,7 +441,8 @@ int main() {
 
 Ass5
 
-Q1
+Q1 Write a C program which creates a child process which catches a signal sighup, sigint and sigquit. The Parent process send a sighup or sigint signal after every 3 seconds, at the end of 30 second parent send sigquit signal to child and child terminates by displaying message "Parent Process has killed child process!!!"
+
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -584,7 +587,7 @@ int main() {
 
 ######################################################################################
 
-Q? signal
+Q?  2. Write a C program that illustrates suspending and resuming processes using signals
 
 #include <stdio.h>
 #include <stdlib.h>
