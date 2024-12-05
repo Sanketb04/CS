@@ -1,0 +1,128 @@
+Query 1:
+a) db.Film.insert({"Film_id":"1","Title_Of_Film":"Pathaan","Year_of_release":"2023","Genre":["Action","Thriller"],"Actor":["Shahrukh Khan","John Abraham"],"Director":"Gauri Khan","Release_details":["Mumbai","2023/2/21"],"Ratings":"5/5"});
+WriteResult({ "nInserted" : 1 })
+
+b)db.Film.insert([{"Film_id":"4","Title_Of_Film":"RockyAurRani","Year_of_release":"2023","Genre":["Romantic"],"Actor":["Aalia Bhatt","Ranveer Singh"],"Director":"Karan Johar","Release_details":{"place":["Pune","Mumbai"],"date":["2017/5/4","2017/6/7"]},"Ratings":3}]);
+WriteResult({ "nInserted" : 1 })
+
+WriteResult({ "nInserted" : 1 })
+
+Query 2:
+db.Actor.insert({"Actor_id":8,"First_name":'Shahid',"Last_name":'Kapoor',"Address":{"Street":'Lane-8',"City":'Jammu',"State":'Jammu&Kashmir',"Country":'India',"Pin-code":'JM2'},"Contact_Details":{"Email":'shahidk@gmail.com',"Phone_number":'92238-81123'},"Age":'47'});
+WriteResult({ "nInserted" : 1 })
+
+Query 3:
+db.Film.find().pretty()
+db.Actor.find().pretty()
+
+Query 4:
+db.Film.update({Title_Of_Film:{$regex:"^T"}},{$inc:{"Ratings":1}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+
+
+Query5:
+db.Actor.insert({"Actor_id":11,"First_name":'Shradha',"Last_name":'Kapoor',"Address":{"Street":'S9',"City":'Satara',"State":'Maharashtra',"Country":'India',"Pin-code":'MH10'},"Contact_Details":{"Email": 'shradhakapoor@gmail.com',"Phone_number":'70890-64678'},"Age":55});
+WriteResult({ "nInserted" : 1 })
+
+db.Film.insert({"Film_id":"11","Title_Of_Film":"Half Girlfriend","Year_of_release":"2010","Genre":["Romantic"],"Actor":["Shradha  Kapoor"],"Director":"SLB","Release_details":["Pune","2010/5/3"],"Ratings":2});
+WriteResult({ "nInserted" : 1 })
+
+Query6:
+db.Film.remove({"Title_Of_Film":"Uri"})
+WriteResult({ "nRemoved" : 1 })
+
+Query7:
+db.Actor.remove({"First_name":"Ishaan","Last_name":"Kapoor"})
+WriteResult({ "nRemoved" : 1 })
+
+Query 8:
+db.Actor.remove({"Age":{$gt:50}})
+WriteResult({ "nRemoved" : 1 })
+Query9:
+db.Actor.update({"Actor_id":10},{$set:{"Address":{"Street":'Ln4',"City":'Nashik',"State":'Maharashtra',"Country":'India',"Pin-code":'MH16'}}})
+Before:
+{
+	"_id" : ObjectId("6512752e0aeebdc77e40f0b6"),
+	"Actor_id" : 10,
+	"First_name" : "Jhanvi",
+	"Last_name" : "Kapoor",
+	"Address" : {
+		"Street" : "Sector9",
+		"City" : "Delhi",
+		"State" : "Chandigrah",
+		"Country" : "India",
+		"Pin-code" : "CH10"
+	},
+	"Contact_Details" : {
+		"Email" : "jhahnviikapoor@gmail.com",
+		"Phone_number" : "78678-90890"
+	},
+	"Age" : "28"
+}
+After:
+
+{
+	"_id" : ObjectId("6512752e0aeebdc77e40f0b6"),
+	"Actor_id" : 10,
+	"First_name" : "Jhanvi",
+	"Last_name" : "Kapoor",
+	"Address" : {
+		"Street" : "Ln4",
+		"City" : "Nashik",
+		"State" : "Maharashtra",
+		"Country" : "India",
+		"Pin-code" : "MH16"
+	},
+	"Contact_Details" : {
+		"Email" : "jhahnviikapoor@gmail.com",
+		"Phone_number" : "78678-90890"
+	},
+	"Age" : "28"
+}
+
+
+Query 10:
+db.Film.update({"Director":"Gauri Khan"},{$set:{"Genre":"Action"}})
+Before:
+{
+	"_id" : ObjectId("65125cd10aeebdc77e40f098"),
+	"Film_id" : "1",
+	"Title_Of_Film" : "Pathaan",
+	"Year_of_release" : "2023",
+	"Genre" : [
+		"Action",
+		"Thriller"
+	],
+	"Actor" : [
+		"Shahrukh Khan",
+		"John Abraham"
+	],
+	"Director" : "Gauri Khan",
+	"Release_details" : [
+		"Mumbai",
+		"2023/2/21"
+	],
+	"Ratings" : 4
+}
+
+After:
+{
+	"_id" : ObjectId("65125cd10aeebdc77e40f098"),
+	"Film_id" : "1",
+	"Title_Of_Film" : "Pathaan",
+	"Year_of_release" : "2023",
+	"Genre" : "Action",
+	"Actor" : [
+		"Shahrukh Khan",
+		"John Abraham"
+	],
+	"Director" : "Gauri Khan",
+	"Release_details" : [
+		"Mumbai",
+		"2023/2/21"
+	],
+	"Ratings" : 4
+}
+
+
+

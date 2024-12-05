@@ -1,0 +1,72 @@
+Qry1
+db.Employeee.insert({"Employee ID":2023101,"First Name":"Amar","Last Name":"Sher","Email":"amars13@gmail.com","Phone-no":9145025965,"Adddress":[{"House no":"32A","Street":"GandhiNagar","City":"Pune","State":"Maharashtra","Country":"India","Pincode":411048}],"Salary":5000000,"Designation":"Co-Founder","Experience":"5years","Date Of Joining":"19/4/2021","Birthdate":"13/12/1999"})
+//Insert Many
+db.Employee.insertMany([{"Employee ID":2023106,"First Name":"Kris","Last Name":"June","Email":"kju123@gmail.com","Phone-no":7412589603,"Adddress":[{"House no":"Lane3","Street":"J.M.Road","City":"Pune","State":"Maharashtra","Country":"India","Pincode":411009}],"Salary":45500,"Designation":"Graphic Desg","Experience":"3.5","Date Of Joining":"18/11/17","Birthdate":"26/8/2003"},{"Employee ID":2023107,"First Name":"Monty","Last Name":"Singh","Email":"singhmont@gmail.com","Phone-no":9632580582,"Adddress":[{"House no":92,"Street":"VimmanNagar","City":"Pune","State":"Maharashtra","Country":"India","Pincode":411050}],"Salary":17500,"Designation":"Supervisor","Experience":"6years","Date Of Joining":"4/7/2019","Birthdate":"810/9/1994"}])
+
+Qry2
+//Many
+db.Transaction.insertMany([{"Transaction ID":201,"Transaction Date":"15/10/2020","Name":"Amar","Transaction Details":[{"Item ID":110192,"Item Name":"MAC-BOOK","Quantity":1,"Price":100000}],"Payment":[{"Type of Payment":"Cash","Total Amt Paid":55000,"Payment Sucessful":"N"}],"Remark":""},{"Transaction ID":202,"Transaction Date":"17/12/2019","Name":"Monty","Transaction Details":[{"Item ID":123106,"Item Name":"Pens and Register","Quantity":4,"Price":2500}],"Payment":[{"Type of Payment":"Cash","Total Amt Paid":1800,"Payment Sucessful":"N"}],"Remark":" Rs700 Pending"},{"Transaction ID":203,"Transaction Date":"7/5/2020","Name":"Kris","Transaction Details":[{"Item ID":110187,"Item Name":"Mobile Cover","Quantity":7,"Price":1400}],"Payment":[{"Type of Payment":"Debit","Total Amt Paid":"1400","Payment Sucessful":"Y"}],"Remark":"Sucessful"},{"Transaction ID":204,"Transaction Date":"8/1/2019","Name":"Kazim","Transaction Details":[{"Item ID":123102,"Item Name":"Laptop cover","Quantity":15,"Price":4500}],"Payment":[{"Type of Payment":"Debit","Total Amt Paid":5000,"Payment Sucessful":"N"}],"Remark":" Rs500 extraa"},{"Transaction ID":205,"Transaction Date":"12/1/2019","Name":"Rose","Transaction Details":[{"Item ID":1348764,"Item Name":"Earphones","Quantity":3,"Price":600}],"Payment":[{"Type of Payment":"Cash","Total Amt Paid":600,"Payment Sucessful":"Y"}],"Remark":"Payment Sucessful"}])
+
+{
+	"acknowledged" : true,
+	"insertedIds" : [
+		ObjectId("6524e602889fa7b5e1a6d88b"),
+		ObjectId("6524e602889fa7b5e1a6d88c"),
+		ObjectId("6524e602889fa7b5e1a6d88d"),
+		ObjectId("6524e602889fa7b5e1a6d88e"),
+		ObjectId("6524e602889fa7b5e1a6d88f")
+	]
+}
+
+
+db.Transaction.insertMany([{"Transaction ID":206,"Transaction Date":"21/12/2019","Name":"Monty","Transaction Details":[{"Item ID":123108,"Item Name":"Printing Paper","Quantity":4,"Price":5000}],"Payment":[{"Type of Payment":"Debit","Total Amt Paid":5000,"Payment Sucessful":"Y"}],"Remark":""},{"Transaction ID":207,"Transaction Date":"11/5/2020","Name":"Yolo","Transaction Details":[{"Item ID":164187,"Item Name":"Charger","Quantity":4,"Price":2350}],"Payment":[{"Type of Payment":"Debit","Total Amt Paid":"2350","Payment Sucessful":"Y"}],"Remark":"Sucessful"},{"Transaction ID":208,"Transaction Date":"13/4/2019","Name":"Safa","Transaction Details":[{"Item ID":123104,"Item Name":"Laptop Bag","Quantity":2,"Price":1000}],"Payment":[{"Type of Payment":"Cash","Total Amt Paid":1000,"Payment Sucessful":"Y"}],"Remark":" "},{"Transaction ID":209,"Transaction Date":"23/2/2020","Name":"Lily","Transaction Details":[{"Item ID":158794,"Item Name":"Office Journals","Quantity":8,"Price":1200}],"Payment":[{"Type of Payment":"Credit","Total Amt Paid":1200,"Payment Sucessful":"Y"}],"Remark":"Payment Sucessful"},{"Transaction ID":210,"Transaction Date":"16/6/2020","Name":"Kiran","Transaction Details":[{"Item ID":123111,"Item name":"Id holder","Quantity":30,"Price":3000}],"Payment":[{"Type of Payment":"Debit","Total Amt Paid":1500,"Payment Sucessful":"N"}],"Remark":""}}])
+
+{
+	"acknowledged" : true,
+	"insertedIds" : [
+		ObjectId("6524e658889fa7b5e1a6d890"),
+		ObjectId("6524e658889fa7b5e1a6d891"),
+		ObjectId("6524e658889fa7b5e1a6d892"),
+		ObjectId("6524e658889fa7b5e1a6d893"),
+		ObjectId("6524e658889fa7b5e1a6d894")
+	]
+}
+
+
+Qry3
+> db.Employeee.find().pretty()
+> db.Transaction.find().pretty()
+
+Qry4
+> db.Employeee.update({},{$inc:{"Salary":4000}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+
+> db.Employeee.updateMany({},{$inc:{"Salary":4000}})
+{ "acknowledged" : true, "matchedCount" : 6, "modifiedCount" : 6 }
+
+Qry5
+>db.Transaction.update({"Transaction ID":201},{$set:{"Remark":"Payment Sucessfull"}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+
+Qry6
+> db.Employeee.update({"First Name":"Monty"},{$set:{"Designation":"Manager"}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+
+Qry7
+> db.Employeee.update({"Employee ID":2023106},{$set:{"Designation":"UI/UX Desg"}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+
+Qry8
+db.Employeee.update({"Employee ID":2023104},{$set:{"Address":[{"House no":42,"Street":"FC"}]}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+
+Qry9
+db.Transaction.remove({"Name":"Safa"},{"Transaction Date":"13/4/2019"})
+WriteResult({ "nRemoved" : 1 })
+
+
+Qry10
+db.Employeee.remove({"First Name":{$regex:"^K"}})
+WriteResult({ "nRemoved" : 2 })
+
+
