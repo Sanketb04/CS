@@ -1,9 +1,0 @@
-1
-
-match (p:Person)- [:RECOMMENDED] -> (book1:Book {title: 'Tinker, Tailor, Soldier, Spy'}) return p.name
-
-match (p:Person{role:'Reader'})- [:RECOMMENDED] -> (book1:Book {title: 'Tinker, Tailor, Soldier, Spy'}) return count(p) AS readersCount
-
-2
-
-match (s:song) -[:Written_By]->(sa:Song_Author{name:'Honey Singh'}) return s.name
