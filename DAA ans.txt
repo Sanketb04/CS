@@ -1,0 +1,748 @@
+
+1. Bubble sort in increasing order.
+function sorted = bubbleSort(arr)
+    n = length(arr); // Get the number of elements in the array
+    for i = 1:n-1
+        for j = 1:n-i
+            if arr(j) > arr(j+1) then
+                // Swap arr(j) and arr(j+1) if they are out of order
+                temp = arr(j);
+                arr(j) = arr(j+1);
+                arr(j+1) = temp;
+            end
+        end
+    end
+    sorted = arr; // Return the sorted array
+end
+
+// Example usage
+numbers = [34, 7, 23, 32, 5, 62, 20, 1, 45, 15];
+disp("Original Array: " + string(numbers));
+sortedNumbers = bubbleSort(numbers);
+disp("Sorted Array (Bubble Sort): " + string(sortedNumbers));
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+Write a Scilab program to sort 10 numbers using:
+2. Insertion sort in increasing order.
+function sorted = insertionSort(arr)
+    n = length(arr);
+    for i = 2:n
+        key = arr(i);
+        j = i - 1;
+        while j > 0 & arr(j) > key do
+            arr(j+1) = arr(j); // Shift larger elements one position to the right
+            j = j - 1;
+        end
+        arr(j+1) = key; // Insert the key at the correct position
+    end
+    sorted = arr;
+end
+
+// Example usage
+numbers = [34, 7, 23, 32, 5, 62, 20, 1, 45, 15];
+disp("Original Array: " + string(numbers));
+sortedNumbers = insertionSort(numbers);
+disp("Sorted Array (Insertion Sort): " + string(sortedNumbers));
+----------------------------------------------------------------------------------------------------------------------------------------------------
+3. Merge sort in increasing order
+function sorted = mergeSort(arr)
+    if length(arr) <= 1 then
+        sorted = arr; // If the array has 1 or 0 elements, it is already sorted
+    else
+        mid = floor(length(arr) / 2); // Find the midpoint
+        left = arr(1:mid); // Split the array into left half
+        right = arr(mid+1:$); // Split the array into right half
+        // Recursively sort both halves
+        leftSorted = mergeSort(left);
+        rightSorted = mergeSort(right);
+        // Merge the sorted halves
+        sorted = merge(leftSorted, rightSorted);
+    end
+end
+
+function merged = merge(left, right)
+    merged = []; // Initialize an empty array for merged result
+    while length(left) > 0 & length(right) > 0 do
+        if left(1) <= right(1) then
+            merged = [merged, left(1)];
+            left = left(2:$); // Remove the first element from left
+        else
+            merged = [merged, right(1)];
+            right = right(2:$); // Remove the first element from right
+        end
+    end
+    // Append the remaining elements
+    merged = [merged, left, right];
+end
+
+// Example usage
+numbers = [34, 7, 23, 32, 5, 62, 20, 1, 45, 15];
+disp("Original Array: " + string(numbers));
+sortedNumbers = mergeSort(numbers);
+disp("Sorted Array (Merge Sort): " + string(sortedNumbers));
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+● Write a Scilab program to find a number using:
+1. Linear search. Accept 5 numbers from the user and number to find.
+function index = linearSearch(arr, target)
+    index = -1; // Initialize index to -1 (not found)
+    for i = 1:length(arr)
+        if arr(i) == target then
+            index = i; // If the target is found, store the index
+            break; // Exit the loop
+        end
+    end
+end
+
+// Main Program
+disp("Enter 5 numbers:");
+numbers = []; // Initialize an empty array
+for i = 1:5
+    num = input("Enter number " + string(i) + ": ");
+    numbers = [numbers, num]; // Append each entered number to the array
+end
+target = input("Enter the number to find: ");
+index = linearSearch(numbers, target);
+if index == -1 then
+    disp("Number not found in the array.");
+else
+    disp("Number found at position: " + string(index));
+end
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+Binary search. Accept 5 numbers from the user and number to find.
+/function index = binarySearch(arr, target)
+    low = 1; // Start index
+    high = length(arr); // End index
+    index = -1; // Initialize index to -1 (not found)
+    while low <= high do
+        mid = int((low + high) / 2); // Calculate the midpoint
+        if arr(mid) == target then
+            index = mid; // Target found at midpoint
+            break; // Exit the loop
+        elseif arr(mid) < target then
+            low = mid + 1; // Target is in the right half
+        else
+            high = mid - 1; // Target is in the left half
+        end
+    end
+end
+
+// Main Program
+disp("Enter 5 numbers:");
+numbers = []; // Initialize an empty array
+for i = 1:5
+    num = input("Enter number " + string(i) + ": ");
+    numbers = [numbers, num]; // Append each entered number to the array
+end
+numbers = gsort(numbers, "g", "i"); // Sort the array in ascending order
+disp("Sorted Array: " + string(numbers));
+target = input("Enter the number to find: ");
+index = binarySearch(numbers, target);
+if index == -1 then
+    disp("Number not found in the array.");
+else
+    disp("Number found at position: " + string(index));
+end
+
+----------------------------------------------------------------------------------------------------------------
+Create a random array of n integers. Accept a value X from the user and use linear
+search algorithm to check whether the number is present in the array or not and
+output the position if the number is present.
+function index = linearSearch(arr, target)
+    index = -1; // Initialize the index to -1 (indicating "not found")
+    for i = 1:length(arr)
+        if arr(i) == target then
+            index = i; // If the target is found, store the position
+            break; // Exit the loop as the number is found
+        end
+    end
+end
+
+// Main Program
+clc; // Clear the command window
+disp("Random Array and Linear Search");
+
+// Accept the size of the array
+n = input("Enter the size of the array (n): ");
+
+// Generate a random array of size n with integers from 1 to 100
+randomArray = grand(1, n, "uin", 1, 100);
+disp("Generated Array: " + string(randomArray));
+
+// Accept the target number from the user
+target = input("Enter the number to search for (X): ");
+
+// Perform linear search
+index = linearSearch(randomArray, target);
+
+// Display the result
+if index == -1 then
+    disp("Number not found in the array.");
+else
+    disp("Number found at position: " + string(index));
+end
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+Write a Scilab program to sort a random array of n integers (accept the value of n
+from user) in ascending order by using:
+4. a quick sort algorithm. 
+function sorted = quickSort(arr)
+    if length(arr) <= 1 then
+        sorted = arr; // If the array has 1 or 0 elements, it's already sorted
+    else
+        pivot = arr(1); // Choose the first element as the pivot
+        left = arr(arr < pivot); // Elements less than the pivot
+        right = arr(arr > pivot); // Elements greater than the pivot
+        equal = arr(arr == pivot); // Elements equal to the pivot
+        // Recursively sort left and right partitions, and concatenate results
+        sorted = [quickSort(left), equal, quickSort(right)];
+    end
+end
+
+// Main Program
+clc;
+disp("Quick Sort Algorithm");
+
+n = input("Enter the size of the array (n): ");
+randomArray = grand(1, n, "uin", 1, 100); // Generate random array
+disp("Generated Array: " + string(randomArray));
+
+sortedArray = quickSort(randomArray); // Perform quick sort
+disp("Sorted Array (Quick Sort): " + string(sortedArray));
+
+------------------------------------------------------------------------------------------------------------------------------------------------------
+selection sort algorithm.
+function sorted = selectionSort(arr)
+    n = length(arr);
+    for i = 1:n-1
+        minIndex = i; // Assume the first unsorted element is the smallest
+        for j = i+1:n
+            if arr(j) < arr(minIndex) then
+                minIndex = j; // Update the index of the smallest element
+            end
+        end
+        // Swap the smallest element with the first unsorted element
+        temp = arr(i);
+        arr(i) = arr(minIndex);
+        arr(minIndex) = temp;
+    end
+    sorted = arr; // Return the sorted array
+end
+
+// Main Program
+clc;
+disp("Selection Sort Algorithm");
+
+n = input("Enter the size of the array (n): ");
+randomArray = grand(1, n, "uin", 1, 100); // Generate random array
+disp("Generated Array: " + string(randomArray));
+
+sortedArray = selectionSort(randomArray); // Perform selection sort
+disp("Sorted Array (Selection Sort): " + string(sortedArray));
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+a counting sort algorithm. 
+function sorted = countingSort(arr)
+    maxVal = max(arr); // Find the maximum value in the array
+    count = zeros(1, maxVal + 1); // Create a count array of size maxVal+1
+    
+    // Count the occurrences of each element
+    for i = 1:length(arr)
+        count(arr(i) + 1) = count(arr(i) + 1) + 1;
+    end
+    
+    // Reconstruct the sorted array
+    sorted = [];
+    for i = 1:length(count)
+        sorted = [sorted, ones(1, count(i)) * (i - 1)];
+    end
+end
+
+// Main Program
+clc;
+disp("Counting Sort Algorithm");
+
+n = input("Enter the size of the array (n): ");
+randomArray = grand(1, n, "uin", 0, 100); // Generate random array with non-negative integers
+disp("Generated Array: " + string(randomArray));
+
+sortedArray = countingSort(randomArray); // Perform counting sort
+disp("Sorted Array (Counting Sort): " + string(sortedArray));
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+Write a Scilab program to perform the following sorting for a given list of
+numbers:
+Element in array: 5,2,10,4,9,2,18
+1. Bubble sort 
+function sorted = bubbleSort(arr)
+    n = length(arr);
+    for i = 1:n-1
+        for j = 1:n-i
+            if arr(j) > arr(j+1) then
+                // Swap the elements if they are in the wrong order
+                temp = arr(j);
+                arr(j) = arr(j+1);
+                arr(j+1) = temp;
+            end
+        end
+    end
+    sorted = arr; // Return the sorted array
+end
+
+// Main Program
+clc;
+disp("Bubble Sort Algorithm");
+
+array = [5, 2, 10, 4, 9, 2, 18]; // Initialize the array
+disp("Original Array: " + string(array));
+
+sortedArray = bubbleSort(array); // Perform bubble sort
+disp("Sorted Array (Bubble Sort): " + string(sortedArray));
+
+----------------------------------------------------------------------------------------------------------------------------------------------------
+ Insertion sort
+function sorted = insertionSort(arr)
+    n = length(arr);
+    for i = 2:n
+        key = arr(i); // Current element to be placed correctly
+        j = i - 1;
+        while j > 0 & arr(j) > key do
+            arr(j+1) = arr(j); // Shift larger elements to the right
+            j = j - 1;
+        end
+        arr(j+1) = key; // Place the key in its correct position
+    end
+    sorted = arr; // Return the sorted array
+end
+
+// Main Program
+clc;
+disp("Insertion Sort Algorithm");
+
+array = [5, 2, 10, 4, 9, 2, 18]; // Initialize the array
+disp("Original Array: " + string(array));
+
+sortedArray = insertionSort(array); // Perform insertion sort
+disp("Sorted Array (Insertion Sort): " + string(sortedArray));
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+Write a Scilab program for the implementation of following:
+1. Topological sorting
+function order = topologicalSort(vertices, edges)
+    inDegree = zeros(1, vertices); // Array to store in-degrees of all vertices
+    adjList = cell(vertices, 1); // Adjacency list representation
+    
+    // Build adjacency list and calculate in-degrees
+    for i = 1:size(edges, 1)
+        u = edges(i, 1);
+        v = edges(i, 2);
+        adjList{u} = [adjList{u}, v];
+        inDegree(v) = inDegree(v) + 1;
+    end
+
+    // Initialize a queue with all vertices having in-degree 0
+    queue = [];
+    for i = 1:vertices
+        if inDegree(i) == 0 then
+            queue = [queue, i];
+        end
+    end
+
+    order = []; // To store the topological order
+    while ~isempty(queue)
+        u = queue(1); // Dequeue
+        queue(1) = [];
+        order = [order, u];
+        for v = adjList{u}
+            inDegree(v) = inDegree(v) - 1; // Reduce in-degree
+            if inDegree(v) == 0 then
+                queue = [queue, v]; // Add to queue if in-degree becomes 0
+            end
+        end
+    end
+
+    // Check if the graph contains a cycle
+    if length(order) != vertices then
+        error("Graph is not a DAG; topological sorting is not possible.");
+    end
+end
+
+// Main Program
+clc;
+disp("Topological Sorting");
+
+vertices = input("Enter the number of vertices: ");
+edgesCount = input("Enter the number of edges: ");
+edges = [];
+disp("Enter edges (u, v): ");
+for i = 1:edgesCount
+    u = input("Enter source vertex: ");
+    v = input("Enter destination vertex: ");
+    edges = [edges; u, v];
+end
+
+order = topologicalSort(vertices, edges);
+disp("Topological Order: " + string(order));
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+n-Queens problem using a backtracking method.
+function isSafe(board, row, col, n)
+    // Check this column on the left
+    for i = 1:row
+        if board(i, col) == 1 then
+            return %F;
+        end
+    end
+
+    // Check upper diagonal on the left
+    for i = row-1:-1:1
+        if col - (row - i) > 0 & board(i, col - (row - i)) == 1 then
+            return %F;
+        end
+    end
+
+    // Check lower diagonal on the left
+    for i = row-1:-1:1
+        if col + (row - i) <= n & board(i, col + (row - i)) == 1 then
+            return %F;
+        end
+    end
+
+    return %T; // Position is safe
+end
+
+function result = solveNQueens(board, row, n)
+    if row > n then
+        result = board;
+        return;
+    end
+    
+    for col = 1:n
+        if isSafe(board, row, col, n) then
+            board(row, col) = 1; // Place the queen
+            result = solveNQueens(board, row + 1, n);
+            if size(result, 1) > 0 then
+                return; // If solution is found, return it
+            end
+            board(row, col) = 0; // Backtrack
+        end
+    end
+    
+    result = []; // No solution found for this configuration
+end
+
+// Main Program
+clc;
+disp("N-Queens Problem");
+
+n = input("Enter the size of the chessboard (n): ");
+board = zeros(n, n); // Initialize an empty board
+
+solution = solveNQueens(board, 1, n);
+if size(solution, 1) > 0 then
+    disp("Solution Found:");
+    disp(solution);
+else
+    disp("No solution exists.");
+end
+
+------------------------------------------------------------------------------------------------------------------------------------------------------
+Implement an application of DFS such as to find the topological sort of a directed
+acyclic graph.
+function visited = dfs(node, adjList, visited, stack)
+    visited(node) = %T; // Mark the current node as visited
+    neighbors = adjList{node}; // Get the neighbors of the current node
+    for neighbor = neighbors
+        if ~visited(neighbor) then
+            visited = dfs(neighbor, adjList, visited, stack); // Recursive DFS
+        end
+    end
+    stack = [stack, node]; // Push the current node into the stack
+    stackGlobal = stack; // Save the updated stack globally
+end
+
+function order = topologicalSortDFS(vertices, edges)
+    adjList = cell(vertices, 1); // Create an adjacency list
+    visited = zeros(1, vertices); // Track visited nodes (0 = not visited, 1 = visited)
+    stack = []; // Stack to store the topological order
+
+    // Build the adjacency list
+    for i = 1:size(edges, 1)
+        u = edges(i, 1);
+        v = edges(i, 2);
+        adjList{u} = [adjList{u}, v];
+    end
+
+    // Perform DFS for each unvisited node
+    for i = 1:vertices
+        if ~visited(i) then
+            stackGlobal = dfs(i, adjList, visited, stack); // Perform DFS
+        end
+    end
+
+    order = stackGlobal($:-1:1); // Reverse the stack to get the topological order
+end
+
+// Main Program
+clc;
+disp("Topological Sorting using DFS");
+
+vertices = input("Enter the number of vertices: ");
+edgesCount = input("Enter the number of edges: ");
+edges = [];
+disp("Enter edges (u, v): ");
+for i = 1:edgesCount
+    u = input("Enter source vertex: ");
+    v = input("Enter destination vertex: ");
+    edges = [edges; u, v];
+end
+
+order = topologicalSortDFS(vertices, edges);
+disp("Topological Order: " + string(order));
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+20 mark
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Write a Scilab program for implementing an application of BFS such as to find
+connected components of an undirected graph.
+function bfs(node, adjList, visited, component)
+    queue = []; // Queue for BFS
+    queue = [queue, node]; // Start BFS from the given node
+    visited(node) = %T; // Mark the node as visited
+    component = [component, node]; // Add the node to the current component
+
+    while ~isempty(queue)
+        u = queue(1); // Dequeue the front element
+        queue(1) = []; // Remove it from the queue
+        neighbors = adjList{u}; // Get neighbors of node u
+        for v = neighbors
+            if ~visited(v) then
+                visited(v) = %T; // Mark v as visited
+                queue = [queue, v]; // Enqueue the neighbor
+                component = [component, v]; // Add to current component
+            end
+        end
+    end
+end
+
+function components = findConnectedComponents(vertices, edges)
+    adjList = cell(vertices, 1); // Adjacency list representation of the graph
+    visited = zeros(1, vertices); // Array to track visited nodes (0 = not visited, 1 = visited)
+    components = []; // List to store the connected components
+
+    // Build the adjacency list
+    for i = 1:size(edges, 1)
+        u = edges(i, 1);
+        v = edges(i, 2);
+        adjList{u} = [adjList{u}, v];
+        adjList{v} = [adjList{v}, u]; // Since the graph is undirected
+    end
+
+    // Perform BFS for each unvisited node
+    for i = 1:vertices
+        if ~visited(i) then
+            component = []; // List to store the current component
+            bfs(i, adjList, visited, component); // BFS to find all nodes in this component
+            components = [components; component]; // Add the current component to the list
+        end
+    end
+end
+
+// Main Program
+clc;
+disp("Connected Components using BFS");
+
+vertices = input("Enter the number of vertices: ");
+edgesCount = input("Enter the number of edges: ");
+edges = [];
+disp("Enter edges (u, v): ");
+for i = 1:edgesCount
+    u = input("Enter source vertex: ");
+    v = input("Enter destination vertex: ");
+    edges = [edges; u, v];
+end
+
+components = findConnectedComponents(vertices, edges);
+disp("Connected Components:");
+for i = 1:size(components, 1)
+    disp("Component " + string(i) + ": " + string(components(i, :)));
+end
+
+------------------------------------------------------------------------------------------------------------------------------------------------------
+Write a Scilab program to solve the following problem:
+Nuts & Bolts Problem (Lock & Key problem) using Quick Sort. Given a set of n nuts
+of different sizes and n bolts of different sizes. There is a one-one mapping between
+nuts and bolts. Match nuts and bolts efficiently.
+Constraint: Comparison of a nut to another nut or a bolt to another bolt is not
+allowed. It means a nut can only be compared with a bolt and a bolt can only be
+compared with a nut to see which one is bigger/smaller. Another way of asking
+this problem is, to give a box with locks and keys where one lock can be opened
+by one key in the box. We need to match the pair.
+// Function to perform quick sort on nuts or bolts based on pivot
+function [arr] = quickSort(arr, low, high, otherArr)
+    if low < high then
+        // Partition the array using a pivot
+        pivotIndex = partition(arr, low, high, otherArr);
+        // Recursively sort the subarrays
+        arr = quickSort(arr, low, pivotIndex - 1, otherArr);
+        arr = quickSort(arr, pivotIndex + 1, high, otherArr);
+    end
+end
+
+// Function to partition the array based on a pivot (either nut or bolt)
+function [pivotIndex] = partition(arr, low, high, otherArr)
+    pivot = arr(high);  // Choosing the last element as pivot
+    i = low - 1;
+    for j = low:high - 1
+        // Compare the current element with the pivot in the other array
+        if (otherArr[j] < pivot) then
+            i = i + 1;
+            arr = swap(arr, i, j);  // Swap if smaller
+        end
+    end
+    // Place the pivot at the correct position
+    arr = swap(arr, i + 1, high);
+    pivotIndex = i + 1;
+end
+
+// Function to swap two elements in an array
+function [arr] = swap(arr, i, j)
+    temp = arr(i);
+    arr(i) = arr(j);
+    arr(j) = temp;
+end
+
+// Main function to solve the Nuts and Bolts problem
+function matchNutsAndBolts(nuts, bolts)
+    n = length(nuts);  // Number of nuts (and bolts)
+    quickSort(nuts, 1, n, bolts);  // Sort nuts based on bolts
+    quickSort(bolts, 1, n, nuts);  // Sort bolts based on nuts
+    
+    // Print the matched pairs of nuts and bolts
+    disp("Matched Nuts and Bolts:");
+    for i = 1:n
+        disp("Nut: " + string(nuts(i)) + " with Bolt: " + string(bolts(i)));
+    end
+end
+
+// Main program execution
+clc;
+disp("Nuts and Bolts Matching using Quick Sort");
+
+n = input("Enter the number of nuts and bolts: ");  // Input number of nuts and bolts
+
+// Generate random nuts and bolts sizes
+nuts = rand(1, n) * 100;  // Random nut sizes between 0 and 100
+bolts = rand(1, n) * 100;  // Random bolt sizes between 0 and 100
+
+disp("Nuts: ");
+disp(nuts);
+disp("Bolts: ");
+disp(bolts);
+
+matchNutsAndBolts(nuts, bolts);  // Call the matching function
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+Generate a binary string of length N using branch and bound technique.
+(Input: N = 3 Output: 000 001 010 011 100 101 110 111 Explanation: Numbers
+with 3 binary digits are 0, 1, 2, 3, 4, 5, 6, 7 Input: N = 2 Output: 00 01 10 11)
+// Function to generate binary strings using branch and bound
+function generateBinaryStrings(N)
+    // Generate the binary strings from 0 to 2^N - 1
+    numStrings = 2^N;  // Total number of binary strings of length N
+    for i = 0:numStrings-1
+        binaryString = dec2bin(i, N);  // Convert integer to binary string with N bits
+        disp(binaryString);  // Display the binary string
+    end
+end
+
+// Main program execution
+clc;
+disp("Binary String Generation Using Branch and Bound");
+
+N = input("Enter the length of binary string (N): ");  // Input the value of N
+
+generateBinaryStrings(N);  // Call the function to generate and display binary strings
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+Suppose we want to make an exam schedule for a university. We have listed
+different subjects and students enrolled in every subject. Many subjects would
+have common students (of the same batch, some backlog students, etc). How do
+we schedule the exam so that no two exams with a common student are scheduled
+at same time? How many minimum time slots are needed to schedule all exams?
+This problem can be represented as a graph where every vertex is a subject and an
+edge between two vertices means there is a common student. So this is a graph
+coloring problem where the minimum number of time slots is equal to the
+chromatic number of the graph. Write a Scilab program to solve the above problem.
+
+// Function to perform greedy coloring of the graph
+function [coloring, numColors] = greedyColoring(graph, numSubjects)
+    coloring = -1 * ones(1, numSubjects);  // Initialize the coloring array (-1 means no color assigned)
+    coloring(1) = 0;  // Assign the first color (0) to the first vertex (subject)
+    
+    // Array to keep track of the available colors
+    available = zeros(1, numSubjects);
+    
+    // Start coloring the remaining vertices
+    for u = 2:numSubjects
+        // Reset the available array for each vertex
+        available = zeros(1, numSubjects);
+        
+        // Mark the unavailable colors for neighbors of vertex u
+        for v = 1:numSubjects
+            if graph(u, v) == 1 & coloring(v) ~= -1 then
+                available(coloring(v) + 1) = 1;  // Mark the color of adjacent vertex as unavailable
+            end
+        end
+        
+        // Find the first available color
+        for c = 0:numSubjects-1
+            if available(c + 1) == 0 then
+                coloring(u) = c;  // Assign the color to vertex u
+                break;
+            end
+        end
+    end
+    
+    // The number of colors used is the maximum color value + 1
+    numColors = max(coloring) + 1;
+end
+
+// Main function to solve the exam scheduling problem
+function examSchedule(graph, numSubjects)
+    // Call the greedy coloring function
+    [coloring, numColors] = greedyColoring(graph, numSubjects);
+    
+    // Display the results
+    disp("Minimum Time Slots (Chromatic Number): " + string(numColors));
+    disp("Assigned Time Slots to Subjects:");
+    for i = 1:numSubjects
+        disp("Subject " + string(i) + " is assigned to time slot " + string(coloring(i) + 1));
+    end
+end
+
+// Main program execution
+clc;
+disp("Exam Scheduling Using Graph Coloring");
+
+numSubjects = input("Enter the number of subjects: ");
+disp("Enter the adjacency matrix (1 if there's a common student, 0 otherwise):");
+graph = zeros(numSubjects, numSubjects);  // Initialize the graph (adjacency matrix)
+
+for i = 1:numSubjects
+    for j = 1:numSubjects
+        if i != j then
+            graph(i, j) = input("Is there a common student between subject " + string(i) + " and subject " + string(j) + "? (1 for Yes, 0 for No): ");
+        else
+            graph(i, j) = 0;  // No self-loops
+        end
+    end
+end
+
+examSchedule(graph, numSubjects);  // Call the function to solve the problem
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
